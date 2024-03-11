@@ -6,19 +6,26 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
-
-
+import { FooterComponent } from './footer/footer.component';
+import { GestionMenuComponent } from './gestion-menu/gestion-menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    FooterComponent,
+    GestionMenuComponent
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
