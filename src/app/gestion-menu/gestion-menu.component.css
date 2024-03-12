@@ -9,6 +9,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .demo { 
     font-family: 'Noto Sans', sans-serif; 
 }
@@ -96,7 +97,7 @@ body {
 }
 
 .panel .panel-body .table tbody tr td {
-    color: #fff;
+    color: black;
     font-size: 15px;
     padding: 10px 12px;
     vertical-align: middle;

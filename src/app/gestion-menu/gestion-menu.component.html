@@ -7,7 +7,7 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-sm-12 col-xs-12">
-                            <a href="#" class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i> Add New</a>
+                            <a [routerLink]="['/add-menu']" class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i> Add New</a>
                             <form class="form-horizontal pull-right">
                                 <div class="form-group">
                                     <label>Meals List</label>
@@ -29,52 +29,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let m of menus ">
                                 <td>
                                     <ul class="action-list">
-                                        <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
-                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
+                                        <li><a (click)="updatePlat(m.id)" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
+                                        <li><a  class="btn btn-danger" (click)="delete()"><i class="fa fa-times"></i></a></li>
                                     </ul>
                                 </td>
-                                <td>1</td>
-                                <td>Vincent Williamson</td>
-                                <td>31</td>
-                                <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
-                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
-                                    </ul>
-                                </td>
-                                <td>2</td>
-                                <td>Taylor Reyes</td>
-                                <td>22</td>
-                                <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
-                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
-                                    </ul>
-                                </td>
-                                <td>3</td>
-                                <td>Justin Block</td>
-                                <td>26</td>
-                                <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <ul class="action-list">
-                                        <li><a href="#" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
-                                        <li><a href="#" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
-                                    </ul>
-                                </td>
-                                <td>4</td>
-                                <td>Sean Guzman</td>
-                                <td>26</td>
+                                <td>{{m.description}}</td>
+                                <td>{{m.dessert}}</td>
+                                <td>{{m.qteDisponible}}</td>
                                 <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
                             </tr>
                         </tbody>

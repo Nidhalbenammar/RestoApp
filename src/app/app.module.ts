@@ -12,6 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
+import { UpdatePlatComponent } from './update-plat/update-plat.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,14 +23,16 @@ import { AddMenuComponent } from './add-menu/add-menu.component';
     FooterComponent,
     GestionMenuComponent,
     AffichageMenuComponent,
-    AddMenuComponent
+    AddMenuComponent,
+    UpdatePlatComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     
   ],
   providers: [],

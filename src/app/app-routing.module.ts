@@ -6,6 +6,7 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { GestionMenuComponent } from './gestion-menu/gestion-menu.component';
 import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
+import { UpdatePlatComponent } from './update-plat/update-plat.component';
 
 const routes: Routes = [
   {path:'header',component: HeaderComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'acceuil',component:AcceuilComponent},
   {path:'gestion-menu',component:GestionMenuComponent},
   {path:'affichage-menu',component:AffichageMenuComponent},
-  {path:'add-menu',component:AddMenuComponent}
+  {path:'add-menu',component:AddMenuComponent},
+  {path:'update-plat/:id',component:UpdatePlatComponent}
 ];
 
 @NgModule({

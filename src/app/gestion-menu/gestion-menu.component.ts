@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MenuService } from '../services/menu.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-gestion-menu',
   templateUrl: './gestion-menu.component.html',
@@ -10,7 +11,7 @@ import { MenuService } from '../services/menu.service';
 export class GestionMenuComponent implements OnInit {
   menuForm:any;
   menus:any;
-  constructor(private fb:FormBuilder, private ms:MenuService){
+  constructor(private fb:FormBuilder, private ms:MenuService, private router:Router){
     this.menuForm=this.fb.group({
       id:[],
       description:[],
@@ -32,5 +33,12 @@ export class GestionMenuComponent implements OnInit {
       console.log(data);
     })
   }*/
+  updatePlat(id :number){
+    this.router.navigate(['update-plat',id])
+   }
+  delete(){
+    var id=this.menuForm.controls.id.value;
+    console.log(id);
+  }
 
 }
