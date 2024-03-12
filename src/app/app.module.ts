@@ -10,6 +10,8 @@ import { FooterComponent } from './footer/footer.component';
 import { GestionMenuComponent } from './gestion-menu/gestion-menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
+import { AddMenuComponent } from './add-menu/add-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     MenuComponent,
     AcceuilComponent,
     FooterComponent,
-    GestionMenuComponent
+    GestionMenuComponent,
+    AffichageMenuComponent,
+    AddMenuComponent
   
   ],
   imports: [
