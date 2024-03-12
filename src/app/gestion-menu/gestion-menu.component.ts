@@ -27,10 +27,10 @@ export class GestionMenuComponent implements OnInit {
     });
   }
 
-  addPlat(){
+  /*addPlat(){
     this.ms.addMenu(this.menuForm.value).subscribe((data)=>{
       console.log(data);
     })
-  }
+  }*/
 
 }
