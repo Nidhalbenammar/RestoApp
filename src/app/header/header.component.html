@@ -1,5 +1,5 @@
  <!-- ======= Header ======= -->
- <div id="topbar" class="d-flex align-items-center fixed-top">
+ <div id="topbar" class="d-flex align-items-center fixed-top" *ngIf="test">
   <div class="container d-flex justify-content-center justify-content-md-between">
 
     <div class="contact-info d-flex align-items-center">
@@ -14,7 +14,7 @@
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav id="navbar" class="navbar order-last order-lg-0">
+      <nav id="navbar" class="navbar order-last order-lg-0" >
         <ul>
           <li><a class="nav-link scrollto active" [routerLink]="['/acceuil']">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -43,7 +43,7 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <a href="#book-a-table" class="book-a-table-btn scrollto d-none d-lg-flex">Log In</a>
+      <a (click)="test = false" [routerLink]="['/login']" class="book-a-table-btn scrollto d-none d-lg-flex">Log In</a>
 
     </div>
   </header><!-- End Header -->

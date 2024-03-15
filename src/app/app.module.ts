@@ -13,7 +13,14 @@ import { AffichageMenuComponent } from './menu/affichage-menu/affichage-menu.com
 import { AddMenuComponent } from './menu/add-menu/add-menu.component';
 import { UpdatePlatComponent } from './menu/update-plat/update-plat.component';
 import { FormsModule } from '@angular/forms';
+<<<<<<< HEAD
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
+=======
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './users/admin/admin.component';
+import { EtudiantComponent } from './users/etudiant/etudiant.component';
+import { ChefComponent } from './users/chef/chef.component';
+>>>>>>> 7e15bcc13c6ebeb80f23f223e1bf9efc58a34162
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +31,14 @@ import { MenuDetailsComponent } from './menu/menu-details/menu-details.component
     AffichageMenuComponent,
     AddMenuComponent,
     UpdatePlatComponent,
+<<<<<<< HEAD
     MenuDetailsComponent
+=======
+    LoginComponent,
+    AdminComponent,
+    EtudiantComponent,
+    ChefComponent
+>>>>>>> 7e15bcc13c6ebeb80f23f223e1bf9efc58a34162
   
   ],
   imports: [
