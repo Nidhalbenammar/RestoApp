@@ -4,27 +4,27 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
 import { AcceuilComponent } from './acceuil/acceuil.component';
 import { FooterComponent } from './footer/footer.component';
-import { GestionMenuComponent } from './gestion-menu/gestion-menu.component';
+import { GestionMenuComponent } from './menu/gestion-menu/gestion-menu.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
-import { AddMenuComponent } from './add-menu/add-menu.component';
-import { UpdatePlatComponent } from './update-plat/update-plat.component';
+import { AffichageMenuComponent } from './menu/affichage-menu/affichage-menu.component';
+import { AddMenuComponent } from './menu/add-menu/add-menu.component';
+import { UpdatePlatComponent } from './menu/update-plat/update-plat.component';
 import { FormsModule } from '@angular/forms';
+import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent,
     AcceuilComponent,
     FooterComponent,
     GestionMenuComponent,
     AffichageMenuComponent,
     AddMenuComponent,
-    UpdatePlatComponent
+    UpdatePlatComponent,
+    MenuDetailsComponent
   
   ],
   imports: [

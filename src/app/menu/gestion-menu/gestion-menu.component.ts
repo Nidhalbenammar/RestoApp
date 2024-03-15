@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { MenuService } from '../services/menu.service';
+import { MenuService } from '../../services/menu.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-gestion-menu',
@@ -36,9 +36,18 @@ export class GestionMenuComponent implements OnInit {
   updatePlat(id :number){
     this.router.navigate(['update-plat',id])
    }
-  delete(){
-    var id=this.menuForm.controls.id.value;
-    console.log(id);
+   viewDetails(id :number){
+    this.router.navigate(['menu-details',id])
+   }
+   deletePlat(id: number) {
+    this.ms.deleteMenu(id).subscribe(() => {
+      console.log('Menu item deleted successfully');
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+      this.router.onSameUrlNavigation = 'reload';
+      this.router.navigate([this.router.url]);
+    }, error => {
+      console.error('Error deleting menu item:', error);
+    });
   }
 
 }

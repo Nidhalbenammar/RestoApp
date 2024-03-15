@@ -10,7 +10,7 @@
                             <a [routerLink]="['/add-menu']" class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i> Add New</a>
                             <form class="form-horizontal pull-right">
                                 <div class="form-group">
-                                    <label>Meals List</label>
+                                    <label>Menus List</label>
                                    
                                 </div>
                             </form>
@@ -22,6 +22,8 @@
                         <thead>
                             <tr>
                                 <th>Action</th>
+                                <th>Menu name</th>
+                                <th>Date</th>
                                 <th>Description</th>
                                 <th>Dessert</th>
                                 <th>Quantity</th>
@@ -33,13 +35,15 @@
                                 <td>
                                     <ul class="action-list">
                                         <li><a (click)="updatePlat(m.id)" class="btn btn-primary"><i class="fa fa-pencil"></i></a></li>
-                                        <li><a  class="btn btn-danger" (click)="delete()"><i class="fa fa-times"></i></a></li>
+                                        <li><a  (click)="deletePlat(m.id)" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
                                     </ul>
                                 </td>
+                                <td>{{m.nom}}</td>
+                                <td>{{m.date}}</td>
                                 <td>{{m.description}}</td>
                                 <td>{{m.dessert}}</td>
                                 <td>{{m.qteDisponible}}</td>
-                                <td><a href="#" class="btn btn-sm btn-success"><i class="fa fa-search"></i></a></td>
+                                <td><a class="btn btn-sm btn-success" (click)="viewDetails(m.id)"><i class="fa fa-search"></i></a></td>
                             </tr>
                         </tbody>
                     </table>

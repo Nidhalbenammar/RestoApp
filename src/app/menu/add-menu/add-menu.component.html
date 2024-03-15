@@ -6,27 +6,34 @@
                 <br>
                 <br>
                 <br>
-                <h3>Update meal</h3>
+                <h3>Add Menu</h3>
                 <div class="card">
-                    <form class="form-card" onsubmit="event.preventDefault()">
+                    <form class="form-card" onsubmit="event.preventDefault()" [formGroup]="menuForm">
+                        <input type="number" formControlName="id" hidden/>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Menu name<span class="text-danger"> *</span></label> 
+                                <input type="text" id="fname" name="fname" placeholder="Description of the meal"  formControlName="nom"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Date<span class="text-danger"> *</span></label>
+                                 <input type="date" id="lname" name="lname" placeholder="Enter Dessert"  formControlName="date"> </div>
+                        </div>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Description<span class="text-danger"> *</span></label> 
-                                <input type="text" id="fname" name="fname" [(ngModel)]="plat.description" onblur="validate(1)"> </div>
+                                <input type="text" id="fname" name="fname" placeholder="Description of the meal"  formControlName="description"> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Dessert<span class="text-danger"> *</span></label>
-                                 <input type="text" id="lname" name="lname" [(ngModel)]="plat.dessert" onblur="validate(2)"> </div>
+                                 <input type="text" id="lname" name="lname" placeholder="Enter Dessert"  formControlName="dessert"> </div>
                         </div>
                         <br>
                         <br>
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Quantity<span class="text-danger"> *</span></label>
-                                 <input type="number" id="email" name="email" [(ngModel)]="plat.qteDisponible" onblur="validate(3)"> </div>
+                                 <input type="number" id="email" name="email" placeholder="Enter Quantity"  formControlName="qteDisponible"> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Photo<span class="text-danger"> *</span></label> 
-                                <input type="file" id="mob" name="mob" placeholder="" onblur="validate(4)"> </div>
+                                <input type="file" id="mob" name="mob" placeholder="" > </div>
                         </div>
                         <br>
                         <br>
                         <div class="row justify-content-end">
-                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Validate</button> </div>
+                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary" (click)="addPlat()">Validate</button> </div>
                         </div>
                     </form>
                 </div>
