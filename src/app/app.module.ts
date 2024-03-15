@@ -15,6 +15,9 @@ import { AddMenuComponent } from './add-menu/add-menu.component';
 import { UpdatePlatComponent } from './update-plat/update-plat.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './users/admin/admin.component';
+import { EtudiantComponent } from './users/etudiant/etudiant.component';
+import { ChefComponent } from './users/chef/chef.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,10 @@ import { LoginComponent } from './login/login.component';
     AffichageMenuComponent,
     AddMenuComponent,
     UpdatePlatComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    EtudiantComponent,
+    ChefComponent
   
   ],
   imports: [
