@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,17 +11,19 @@ export class LoginComponent {
   email:string ='';
   password:string ='';
   error:string ='';
-  constructor(private s:LoginService){
+  constructor(private s:LoginService,private router:Router){
 
   }
 
-  OnSubmit() {
+  onSubmit() {
     this.s.login(this.email, this.password).subscribe(
       response => {
         console.log('Login successful:', response);
+        this.router.navigate(['/menu']);
       },
       error => {
-        console.error('Login error:', error);
+        console.log('Login error:');
+        this.router.navigate(['/acceuil']);
       }
     );
   }
