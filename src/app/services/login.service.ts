@@ -13,12 +13,9 @@ export class LoginService {
 
   login(email: string, password: string): Observable<any> {
     return this.http.post<any>(this.baseUrl, { email, password }).pipe(
-      tap(response => {
-        // Handle JWT token here
+      tap(response => {    
         if (response && response.token) {
-          // Store the token in local storage
           localStorage.setItem('token', response.token);
-          // Optionally, handle authentication state or redirect here
         }
       })
     );
