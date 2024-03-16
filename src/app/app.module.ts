@@ -15,6 +15,7 @@ import { UpdatePlatComponent } from './menu/update-plat/update-plat.component';
 import { FormsModule } from '@angular/forms';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { LoginComponent } from './login/login.component';
     AddMenuComponent,
     UpdatePlatComponent,
     MenuDetailsComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   
   ],
   imports: [
