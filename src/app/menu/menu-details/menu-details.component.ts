@@ -13,28 +13,27 @@ import { MenuService } from '../../services/menu.service';
 })
 export class MenuDetailsComponent implements OnInit {
   id!: number;
-  plat: Plat = new Plat(0, '', '', 0, '', new Date());
+  plat: Plat = new Plat(0,new Date(), '', '', 0, '');
 
   constructor(private ps: MenuService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { 
-    this.updateForm = this.fb.group({
-      nom: [''], // Define 'nom' FormControl with required validator
-      date: [''], // Define 'date' FormControl with required validator
-      description: [''], // Define 'description' FormControl
-      dessert: [''], // Define 'dessert' FormControl
-      qteDisponible: [''] // Define 'qteDisponible' FormControl with required validator
+    this.updateForm = this.fb.group({ 
+      date: [''], 
+      descriptionPlat: [''], 
+      dessert: [''], 
+      qteDisponible: [''],
+      supplement: ['']
     });
   }
 
-  updateForm: FormGroup; // Declare FormGroup variable
+  updateForm: FormGroup; 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.ps.getMenuById(this.id).subscribe((data: Plat) => { 
       this.plat = data;
-      // Set form values when data is fetched
       this.updateForm.patchValue({
-        nom: this.plat.nom,
+        supplement: this.plat.supplement,
         date: this.plat.date,
-        description: this.plat.description,
+        descriptionPlat: this.plat.descriptionPlat,
         dessert: this.plat.dessert,
         qteDisponible: this.plat.qteDisponible
       });

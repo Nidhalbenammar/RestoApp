@@ -8,7 +8,9 @@
     </div>
 </div>
  <header id="header" class="fixed-top d-flex align-items-cente">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+  <img src="assets/img/iset.png" alt="Logo" class="logo-img" >
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
 
       <h1 class="logo me-auto me-lg-0"><a href="index.html">E-Resto</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
@@ -44,6 +46,7 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
       <a (click)="test = false" [routerLink]="['/login']" class="book-a-table-btn scrollto d-none d-lg-flex">Log In</a>
+      <a (click)="test = false" [routerLink]="['/signup']" class="book-a-table-btn scrollto d-none d-lg-flex">Sign Up</a>
 
     </div>
   </header><!-- End Header -->

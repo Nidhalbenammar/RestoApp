@@ -1,16 +1,16 @@
 export class Plat {
     id: number;
-    description: string;
+    descriptionPlat: string;
     dessert: string;
     qteDisponible: number;
-    nom :string;
+    supplement :string;
     date :Date;
-    constructor(id: number, description: string, dessert: string, qteDisponible: number,nom :string,date :Date) {
+    constructor(id: number,date :Date, description: string, dessert: string, qteDisponible: number,supplement :string) {
       this.id = id;
-      this.description = description;
+      this.descriptionPlat = description;
       this.dessert = dessert;
       this.qteDisponible = qteDisponible;
-      this.nom=nom;
+      this.supplement=supplement;
       this.date=date;
     }
   }

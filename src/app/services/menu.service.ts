@@ -6,7 +6,7 @@ import { Plat } from '../plat';
   providedIn: 'root'
 })
 export class MenuService {
-  baseUrl='http://localhost:9091/plats';
+  baseUrl='http://localhost:9091/menus';
   constructor(private http:HttpClient) { }
 
   getMenu(){

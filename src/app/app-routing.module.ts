@@ -8,20 +8,19 @@ import { AddMenuComponent } from './menu/add-menu/add-menu.component';
 import { UpdatePlatComponent } from './menu/update-plat/update-plat.component';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
-
-
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
   {path:'header',component: HeaderComponent},
   {path:'acceuil',component:AcceuilComponent},
   {path:'gestion-menu',component:GestionMenuComponent},
   {path:'affichage-menu',component:AffichageMenuComponent},
   {path:'add-menu',component:AddMenuComponent},
   {path:'update-plat/:id',component:UpdatePlatComponent},
-  {path:'menu-details/:id',component:MenuDetailsComponent},
-  {path:'login', component:LoginComponent},
-  {path:'update-plat/:id',component:UpdatePlatComponent}
-
+  {path:'login',component:LoginComponent},
+  {path:'signup',component:SignupComponent},
+  {path:'menu-details/:id',component:MenuDetailsComponent}
 ];
 
 @NgModule({

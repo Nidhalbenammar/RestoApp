@@ -22,11 +22,11 @@
                         <thead>
                             <tr>
                                 <th>Action</th>
-                                <th>Menu name</th>
                                 <th>Date</th>
                                 <th>Description</th>
                                 <th>Dessert</th>
                                 <th>Quantity</th>
+                                <th>supplement</th>
                                 <th>View</th>
                             </tr>
                         </thead>
@@ -38,11 +38,11 @@
                                         <li><a  (click)="deletePlat(m.id)" class="btn btn-danger"><i class="fa fa-times"></i></a></li>
                                     </ul>
                                 </td>
-                                <td>{{m.nom}}</td>
                                 <td>{{m.date}}</td>
-                                <td>{{m.description}}</td>
+                                <td>{{m.descriptionPlat}}</td>
                                 <td>{{m.dessert}}</td>
                                 <td>{{m.qteDisponible}}</td>
+                                <td>{{m.supplement}}</td>
                                 <td><a class="btn btn-sm btn-success" (click)="viewDetails(m.id)"><i class="fa fa-search"></i></a></td>
                             </tr>
                         </tbody>

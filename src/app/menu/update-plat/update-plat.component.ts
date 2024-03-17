@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Import required form modules
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
 import { MenuService } from '../../services/menu.service';
 import { Plat } from '../../plat';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,19 +11,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdatePlatComponent implements OnInit {
   id!: number;
-  plat: Plat = new Plat(0, '', '', 0, '', new Date());
+  plat: Plat = new Plat(0,new Date(), '', '', 0, '');
 
-  updateForm: FormGroup; // Declare FormGroup variable
+  updateForm: FormGroup; 
 
-  errorMessage: string = ''; // Variable to store error message
+  errorMessage: string = '';
 
   constructor(private ps: MenuService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { 
     this.updateForm = this.fb.group({
-      nom: ['', Validators.required], // Define 'nom' FormControl with required validator
-      date: ['', Validators.required], // Define 'date' FormControl with required validator
-      description: [''], // Define 'description' FormControl
-      dessert: [''], // Define 'dessert' FormControl
-      qteDisponible: ['', Validators.required] // Define 'qteDisponible' FormControl with required validator
+      date: [''], 
+      description: [''], 
+      dessert: [''], 
+      qteDisponible: [''],
+      supplement: ['']
     });
   }
 
@@ -31,13 +31,12 @@ export class UpdatePlatComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.ps.getMenuById(this.id).subscribe((data: Plat) => { 
       this.plat = data;
-      // Set form values when data is fetched
       this.updateForm.patchValue({
-        nom: this.plat.nom,
         date: this.plat.date,
-        description: this.plat.description,
+        description: this.plat.descriptionPlat,
         dessert: this.plat.dessert,
-        qteDisponible: this.plat.qteDisponible
+        qteDisponible: this.plat.qteDisponible,
+        supplement: this.plat.supplement
       });
     });
   }
@@ -46,9 +45,9 @@ export class UpdatePlatComponent implements OnInit {
     if (this.updateForm.valid) {
       const platData: Plat = {
         id: this.id,
-        nom: this.updateForm.value.nom,
+        supplement: this.updateForm.value.supplement,
         date: this.updateForm.value.date,
-        description: this.updateForm.value.description,
+        descriptionPlat: this.updateForm.value.description,
         dessert: this.updateForm.value.dessert,
         qteDisponible: this.updateForm.value.qteDisponible
       };

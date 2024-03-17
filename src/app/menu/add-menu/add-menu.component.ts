@@ -13,11 +13,11 @@ export class AddMenuComponent {
   constructor(private fb:FormBuilder, private ms:MenuService, private router:Router){
     this.menuForm=this.fb.group({
       id:[],
-      nom:[],
       date:[],
-      description:[],
+      descriptionPlat:[],
       dessert:[],
-      qteDisponible:[]
+      qteDisponible:[],
+      supplement:[]
 
     });
    
