@@ -23,15 +23,16 @@ export class SignupComponent {
       return;
     }
 
-    const registerDto = {
+    const EtudiantRegisterDto = {
       nom: this.Nom,
       prenom: this.Prenom,
       numeroEtudiant: this.numeroEtudiant,
+      role:'etudiant',
       email: this.email,
       password: this.password
     };
 
-    this._sig.signupEtudiant(registerDto).subscribe(
+    this._sig.signupEtudiant(EtudiantRegisterDto).subscribe(
       response => {
         console.log('User signed up successfully', response);
       },

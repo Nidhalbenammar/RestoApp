@@ -6,7 +6,7 @@ import { Menu } from '../menu/models/menu';
   providedIn: 'root'
 })
 export class MenuService {
-  baseUrl='http://localhost:9091/menus';
+  baseUrl='http://localhost:9092/menus';
   constructor(private http:HttpClient) { }
 
   getMenu(){
