@@ -5,13 +5,13 @@
         <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
           <div class="card-body p-4 p-md-5">
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Sign up </h3>
-            <form>
+            <form (ngSubmit)="onSubmit()">
 
               <div class="row">
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" id="firstName" class="form-control form-control-lg" [(ngModel)]="Nom" />
+                    <input type="text" name="firstName" class="form-control form-control-lg" [(ngModel)]="Nom" />
                     <label class="form-label" for="firstName">Nom</label>
                   </div>
 
@@ -19,7 +19,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" id="lastName" class="form-control form-control-lg" [(ngModel)]="Prenom" />
+                    <input type="text" name="lastName" class="form-control form-control-lg" [(ngModel)]="Prenom" />
                     <label class="form-label" for="lastName">Prenom</label>
                   </div>
 
@@ -29,7 +29,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="text" class="form-control form-control-lg" [(ngModel)]="numeroEtudiant" />
+                    <input type="text" name="num" class="form-control form-control-lg" [(ngModel)]="numeroEtudiant" />
                     <label for="birthdayDate" class="form-label">Numero Etudiant</label>
                   </div>
 
@@ -37,7 +37,7 @@
                 <div class="col-md-6 mb-4">
 
                   <div class="form-outline">
-                    <input type="email" id="emailAddress" class="form-control form-control-lg" [(ngModel)]="email" />
+                    <input type="email" name="emailAddress" class="form-control form-control-lg" [(ngModel)]="email" />
                     <label class="form-label" for="emailAddress">Email</label>
                   </div>
 
@@ -48,14 +48,14 @@
                 <div class="col-md-6 mb-4 pb-2">
 
                     <div class="form-outline">
-                          <input type="password" class="form-control form-control-lg" placeholder="Ex : 0000" value="" [(ngModel)]="password" />
+                          <input type="password" name="mdp" class="form-control form-control-lg" placeholder="Ex : 0000" value="" [(ngModel)]="password" />
 
                       <label class="form-label">MotDePasse</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                 <div class="form-outline">
-                  <input type="password" class="form-control form-control-lg" value="" [(ngModel)]="confirmPassword" />
+                  <input type="password" name="mdp1" class="form-control form-control-lg" value="" [(ngModel)]="confirmPassword" />
                     <label class="form-label" >Confirmer MotDePasse</label>
                 </div>
                 </div>
