@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Plat } from '../../plat';
+import { Menu } from 'src/app/menu';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuService } from '../../services/menu.service';
@@ -13,7 +13,7 @@ import { MenuService } from '../../services/menu.service';
 })
 export class MenuDetailsComponent implements OnInit {
   id!: number;
-  plat: Plat = new Plat(0,new Date(), '', '', 0, '');
+  plat: Menu = new Menu(0,new Date(), '', '', 0, '');
 
   constructor(private ps: MenuService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { 
     this.updateForm = this.fb.group({ 
@@ -28,7 +28,7 @@ export class MenuDetailsComponent implements OnInit {
   updateForm: FormGroup; 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.ps.getMenuById(this.id).subscribe((data: Plat) => { 
+    this.ps.getMenuById(this.id).subscribe((data: Menu) => { 
       this.plat = data;
       this.updateForm.patchValue({
         supplement: this.plat.supplement,

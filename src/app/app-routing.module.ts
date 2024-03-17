@@ -5,7 +5,7 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { GestionMenuComponent } from './menu/gestion-menu/gestion-menu.component';
 import { AffichageMenuComponent } from './menu/affichage-menu/affichage-menu.component';
 import { AddMenuComponent } from './menu/add-menu/add-menu.component';
-import { UpdatePlatComponent } from './menu/update-plat/update-plat.component';
+import { UpdatePlatComponent } from './menu/update-menu/update-plat.component';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';

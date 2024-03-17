@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Plat } from '../plat';
+import { Menu } from '../menu';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +13,8 @@ export class MenuService {
     return this.http.get(this.baseUrl);
   }
 
-  getMenuById(id: any): Observable<Plat> {
-    return this.http.get<Plat>(`${this.baseUrl}/${id}`);
+  getMenuById(id: any): Observable<Menu> {
+    return this.http.get<Menu>(`${this.baseUrl}/${id}`);
   }
 
   addMenu(menu:any){
