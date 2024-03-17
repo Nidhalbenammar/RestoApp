@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AffichageMenuComponent } from './menu/affichage-menu/affichage-menu.component';
 import { AddMenuComponent } from './menu/add-menu/add-menu.component';
-import { UpdatePlatComponent } from './menu/update-menu/update-plat.component';
+import { UpdatePlatComponent } from './menu/update-menu/update-menu.component';
 import { FormsModule } from '@angular/forms';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';

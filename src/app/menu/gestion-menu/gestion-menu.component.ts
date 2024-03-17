@@ -33,13 +33,13 @@ export class GestionMenuComponent implements OnInit {
       console.log(data);
     })
   }*/
-  updatePlat(id :number){
-    this.router.navigate(['update-plat',id])
+  updateMenu(id :number){
+    this.router.navigate(['update-menu',id])
    }
    viewDetails(id :number){
     this.router.navigate(['menu-details',id])
    }
-   deletePlat(id: number) {
+   deleteMenu(id: number) {
     this.ms.deleteMenu(id).subscribe(() => {
       console.log('Menu item deleted successfully');
       this.router.routeReuseStrategy.shouldReuseRoute = () => false;

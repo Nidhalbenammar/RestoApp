@@ -5,7 +5,7 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { GestionMenuComponent } from './menu/gestion-menu/gestion-menu.component';
 import { AffichageMenuComponent } from './menu/affichage-menu/affichage-menu.component';
 import { AddMenuComponent } from './menu/add-menu/add-menu.component';
-import { UpdatePlatComponent } from './menu/update-menu/update-plat.component';
+import { UpdateMenuComponent } from './menu/update-menu/update-menu.component';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'gestion-menu',component:GestionMenuComponent},
   {path:'affichage-menu',component:AffichageMenuComponent},
   {path:'add-menu',component:AddMenuComponent},
-  {path:'update-plat/:id',component:UpdatePlatComponent},
+  {path:'update-menu/:id',component:UpdateMenuComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'menu-details/:id',component:MenuDetailsComponent}
