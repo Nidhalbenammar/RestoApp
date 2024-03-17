@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UpdateMenuComponent implements OnInit {
   id!: number;
-  plat: Menu = new Menu(0,new Date(), '', '', 0, '');
+  menu: Menu = new Menu(0,new Date(), '', '', 0, '');
 
   updateForm: FormGroup; 
 
@@ -30,20 +30,20 @@ export class UpdateMenuComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.ps.getMenuById(this.id).subscribe((data: Menu) => { 
-      this.plat = data;
+      this.menu = data;
       this.updateForm.patchValue({
-        date: this.plat.date,
-        description: this.plat.descriptionPlat,
-        dessert: this.plat.dessert,
-        qteDisponible: this.plat.qteDisponible,
-        supplement: this.plat.supplement
+        date: this.menu.date,
+        description: this.menu.descriptionPlat,
+        dessert: this.menu.dessert,
+        qteDisponible: this.menu.qteDisponible,
+        supplement: this.menu.supplement
       });
     });
   }
 
   onSubmit() {
     if (this.updateForm.valid) {
-      const platData: Menu = {
+      const menuData: Menu = {
         id: this.id,
         supplement: this.updateForm.value.supplement,
         date: this.updateForm.value.date,
@@ -52,7 +52,7 @@ export class UpdateMenuComponent implements OnInit {
         qteDisponible: this.updateForm.value.qteDisponible
       };
       
-      this.ps.updateMenu(this.id, platData).subscribe(() => {
+      this.ps.updateMenu(this.id, menuData).subscribe(() => {
         this.router.navigate(['/gestion-menu']);
       }, error => {
         console.error('Error updating menu:', error);
