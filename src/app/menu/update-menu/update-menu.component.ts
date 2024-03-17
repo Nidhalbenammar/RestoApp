@@ -5,9 +5,9 @@ import { Menu } from 'src/app/menu';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-update-plat',
-  templateUrl: './update-plat.component.html',
-  styleUrls: ['./update-plat.component.css']
+  selector: 'app-update-menu',
+  templateUrl: './update-menu.component.html',
+  styleUrls: ['./update-menu.component.css']
 })
 export class UpdateMenuComponent implements OnInit {
   id!: number;
