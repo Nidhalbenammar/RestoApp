@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Menu } from '../model/menu';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MenuService } from '../../services/menu.service';
+import { MenuService } from '../service/menu.service';
 @Component({
   selector: 'app-menu-details',
   templateUrl: './menu-details.component.html',

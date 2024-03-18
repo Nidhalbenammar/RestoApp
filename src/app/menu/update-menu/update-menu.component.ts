@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'; 
-import { MenuService } from '../../services/menu.service';
+import { MenuService } from '../service/menu.service';
 import { Menu } from '../model/menu';
 import { ActivatedRoute, Router } from '@angular/router';
 

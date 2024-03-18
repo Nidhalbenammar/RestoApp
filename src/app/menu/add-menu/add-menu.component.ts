@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { MenuService } from '../../services/menu.service';
+import { MenuService } from '../service/menu.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-menu',
