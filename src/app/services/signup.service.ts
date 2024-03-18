@@ -1,16 +1,24 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+  import { HttpClient, HttpHeaders } from '@angular/common/http';
+  import { Injectable } from '@angular/core';
+  import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class SignupService {
-  private baseUrl = 'http://localhost:9091/signup'; 
-  constructor(private http: HttpClient) { }
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class SignupService {
+    private baseUrl = 'http://localhost:9092/signup'; 
 
-  signup(email: string, password: string, name: string): Observable<any> {
-    const userData = { email, password, name };
-    return this.http.post<any>(this.baseUrl, userData);
+    constructor(private http: HttpClient) { }
+
+    signupEtudiant(EtudiantRegisterDto: any): Observable<any> {
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json'
+      });
+
+      return this.http.post<any>(`${this.baseUrl}/etudiant`, EtudiantRegisterDto, { headers });
+    }
+
+  
+
+    
   }
-}
