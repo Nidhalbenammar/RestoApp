@@ -5,6 +5,7 @@ import { AcceuilComponent } from './acceuil/acceuil.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MenuRoutingModule } from './menu/menu-routing.module';
+import { UserRoutingModule } from './users/user-routing.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
@@ -15,7 +16,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes),MenuRoutingModule],
+  imports: [RouterModule.forRoot(routes),UserRoutingModule,MenuRoutingModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

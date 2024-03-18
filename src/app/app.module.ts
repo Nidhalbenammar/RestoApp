@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { UserRoutingModule } from './users/user-routing.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    UserRoutingModule,
   
   ],
   providers: [],
