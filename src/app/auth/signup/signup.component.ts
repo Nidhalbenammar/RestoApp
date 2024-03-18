@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SignupService } from '../services/signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +15,7 @@ export class SignupComponent {
   password: string = '';
   confirmPassword: string = '';
   errorMessage: string = '';
-  constructor(private _sig:SignupService){
+  constructor(private _sig:SignupService,private router: Router,){
 
   }
   onSubmit(): void {
@@ -35,6 +36,7 @@ export class SignupComponent {
     this._sig.signupEtudiant(EtudiantRegisterDto).subscribe(
       response => {
         console.log('User signed up successfully', response);
+        this.router.navigate(['/login']);
       },
       error => {
       
