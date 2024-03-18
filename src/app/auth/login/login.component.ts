@@ -16,7 +16,7 @@ export class LoginComponent {
   constructor(
     private s: LoginService,
     private router: Router,
-    private jwtService: JwtServiceService // Inject the JWT service
+    private jwtService: JwtServiceService
   ) { }
 
   onSubmit() {
@@ -26,13 +26,14 @@ export class LoginComponent {
       response => {
         console.log('Token:', response.jwt);
         localStorage.setItem('jwt', response.jwt);
+
         const decodedToken = this.jwtService.decodeToken(response.jwt);
         const roles = decodedToken.roles; 
         
         console.log('User roles:', roles);
 
-        if (roles.includes('admin')) {
-          this.router.navigate(['/ROLE_ADMIN']);
+        if (roles.includes('ROLE_ADMIN')) {
+          this.router.navigate(['/admin']);
         } else if (roles.includes('ROLE_ETUDIANT')) {
           this.router.navigate(['/etudiant']);
         } else {
