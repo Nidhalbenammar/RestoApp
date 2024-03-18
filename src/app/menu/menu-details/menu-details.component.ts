@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Menu } from '../models/menu';
+import { Menu } from '../model/menu';
 import { OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MenuService } from '../../services/menu.service';

@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,8 +37,8 @@ import { SignupComponent } from './signup/signup.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
-
+    FormsModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
