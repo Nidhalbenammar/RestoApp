@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../auth/services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 test=true;
+constructor(private s:LoginService){}
+ngOnInit(): void {
+  if (this.s.isLoggedIn()){
+    this.test=true;
+  }
+}
 }

@@ -14,4 +14,11 @@ export class LoginService {
   login(loginRequest: any): Observable<any> {
     return this.http.post(this.baseUrl, loginRequest);
   }
+  isLoggedIn(): boolean {
+    const isLoggedIn = !!localStorage.getItem('jwt');
+    if (isLoggedIn) {
+      console.log('User is logged in!');
+    }
+    return isLoggedIn;
+  }
 }

@@ -14,8 +14,8 @@ import { AddMenuComponent } from './menu/add-menu/add-menu.component';
 import { UpdateMenuComponent } from './menu/update-menu/update-menu.component';
 import { FormsModule } from '@angular/forms';
 import { MenuDetailsComponent } from './menu/menu-details/menu-details.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { UserRoutingModule } from './users/user-routing.module';
 
 @NgModule({
