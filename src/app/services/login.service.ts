@@ -11,18 +11,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('token') 
-    });
-
-    return this.http.post<any>(this.baseUrl, { email, password }, { headers: headers }).pipe(
-      tap(response => {    
-        if (response && response.token) {
-          localStorage.setItem('token', response.token);
-        }
-      })
-    );      
+  login(loginRequest: any): Observable<any> {
+    return this.http.post(this.baseUrl, loginRequest);
   }
 }

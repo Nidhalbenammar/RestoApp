@@ -8,23 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email:string ='';
-  password:string ='';
-  error:string ='';
+  email: string = '';
+  password: string = '';
+  error: string = '';
   constructor(private s:LoginService,private router:Router){
 
-  }
-
-  onSubmit() {
-    this.s.login(this.email, this.password).subscribe(
+    } 
+       onSubmit() {
+      const loginRequest = { email: this.email, password: this.password };
+   
+      this.s.login(loginRequest).subscribe(
       response => {
-        console.log('Login successful:', response);
-        this.router.navigate(['/menu']);
-      },
-      error => {
-        console.log('Login error:');
-        this.router.navigate(['/acceuil']);
-      }
-    );
-  }
+      console.log('Token:',  response.jwt);
+      localStorage.setItem('jwt', response.jwt);
+      localStorage.setItem('userRole', response.userRole);
+      console.log('Login successful:', response);
+      this.router.navigate(['/signup']);
+    },
+    error => {
+      console.error('Login error:', error);
+      this.router.navigate(['/acceuil']);
+    }
+  );
+}
 }
