@@ -6,10 +6,11 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
 
 const routes: Routes = [
-  {path:"gestion-menu",component:GestionMenuComponent},
+  {path:"gestion-menu",component:GestionMenuComponent,},
   {path:"add-menu",component:AddMenuComponent},
   {path:"menu-details/:id",component:MenuDetailsComponent},
   {path:"update-menu/:id",component:UpdateMenuComponent}
+  
 ];
 
 @NgModule({

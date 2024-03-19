@@ -31,7 +31,6 @@ import { UserRoutingModule } from './users/user-routing.module';
     MenuDetailsComponent,
     LoginComponent,
     SignupComponent
-
   ],
   imports: [
     BrowserModule,
@@ -39,10 +38,11 @@ import { UserRoutingModule } from './users/user-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    UserRoutingModule,
-  
+    UserRoutingModule
   ],
-  providers: [],
+  providers: [
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

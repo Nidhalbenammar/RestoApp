@@ -31,17 +31,20 @@ export class LoginComponent {
         const roles = decodedToken.roles; 
         
         console.log('User roles:', roles);
-
+        console.log('Type of roles:', typeof roles);
         if (roles.includes('ROLE_ADMIN')) {
           this.router.navigate(['/admin']);
         } else if (roles.includes('ROLE_ETUDIANT')) {
           this.router.navigate(['/etudiant']);
         } else {
-          this.router.navigate(['/chef']);
+          this.router.navigate(['/gestion-menu']);
         }
+        this.s.setRoles(roles);
+        console.log('User roles:', this.s.getRoles());
       },
       error => {
         console.error('Login error:', error);
+       
         this.router.navigate(['/acceuil']);
       }
     );
