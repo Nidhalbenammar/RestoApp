@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MenuService } from '../service/menu.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-gestion-menu',
   templateUrl: './gestion-menu.component.html',
@@ -49,5 +50,6 @@ export class GestionMenuComponent implements OnInit {
       console.error('Error deleting menu item:', error);
     });
   }
-
+  
+  
 }

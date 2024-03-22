@@ -18,6 +18,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { UserRoutingModule } from './users/user-routing.module';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +33,9 @@ import { UserRoutingModule } from './users/user-routing.module';
     UpdateMenuComponent,
     MenuDetailsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+ 
+  
 
   ],
   imports: [

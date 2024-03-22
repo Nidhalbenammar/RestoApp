@@ -8,7 +8,7 @@ import { LoginService } from '../auth/services/login.service';
 })
 export class HeaderComponent {
 test=true;
-constructor(private s:LoginService){}
+constructor(public s:LoginService){}
 ngOnInit(): void {
   if (this.s.isLoggedIn()){
     this.test=true;

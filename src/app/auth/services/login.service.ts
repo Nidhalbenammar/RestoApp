@@ -8,7 +8,15 @@ import { tap } from 'rxjs/operators';
 })
 export class LoginService {
   private baseUrl = 'http://localhost:9092/login'; 
+  private roles: any = {};
 
+  setRoles(roles: any) {
+    this.roles = roles;
+  }
+
+  getRoles() {
+    return this.roles;
+  }
   constructor(private http: HttpClient) { }
 
   login(loginRequest: any): Observable<any> {
@@ -20,5 +28,9 @@ export class LoginService {
       console.log('User is logged in!');
     }
     return isLoggedIn;
+  }
+  logout(): void {
+    localStorage.removeItem('jwt');
+    this.roles = {};
   }
 }

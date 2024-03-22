@@ -1,5 +1,5 @@
- <!-- ======= Header ======= -->
- <div id="topbar" class="d-flex align-items-center fixed-top" *ngIf="test">
+<!-- ======= Header ======= -->
+<div id="topbar" class="d-flex align-items-center fixed-top" >
   <div class="container d-flex justify-content-center justify-content-md-between">
 
     <div class="contact-info d-flex align-items-center">
@@ -45,8 +45,12 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+      <ng-container *ngIf="this.s.isLoggedIn()" >
+        <a (click)="this.s.logout()"  [routerLink]="['/acceuil']" class="book-a-table-btn scrollto d-none d-lg-flex">Log out</a></ng-container>
+        <ng-container *ngIf="!this.s.isLoggedIn()" >
       <a (click)="test = false" [routerLink]="['/login']" class="book-a-table-btn scrollto d-none d-lg-flex">Log In</a>
       <a (click)="test = false" [routerLink]="['/signup']" class="book-a-table-btn scrollto d-none d-lg-flex">Sign Up</a>
-
+      
+    </ng-container>
     </div>
   </header><!-- End Header -->
