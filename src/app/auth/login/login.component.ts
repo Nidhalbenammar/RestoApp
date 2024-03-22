@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../services/login.service';
+import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
-import { JwtServiceService } from '../services/jwt-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,43 +8,30 @@ import { JwtServiceService } from '../services/jwt-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
-  error: string = '';
+  loginRequest: any = {};
 
-  constructor(
-    private s: LoginService,
-    private router: Router,
-    private jwtService: JwtServiceService
-  ) { }
+  constructor(private authService: AuthService, private router: Router) {}
 
-  onSubmit() {
-    const loginRequest = { email: this.email, password: this.password };
-
-    this.s.login(loginRequest).subscribe(
+  login() {
+    this.authService.login(this.loginRequest).subscribe(
       response => {
-        console.log('Token:', response.jwt);
-        localStorage.setItem('jwt', response.jwt);
-
-        const decodedToken = this.jwtService.decodeToken(response.jwt);
-        const roles = decodedToken.roles; 
-        
-        console.log('User roles:', roles);
-        console.log('Type of roles:', typeof roles);
-        if (roles.includes('ROLE_ADMIN')) {
-          this.router.navigate(['/admin']);
-        } else if (roles.includes('ROLE_ETUDIANT')) {
+       
+        console.log('Login successful:', response);
+        localStorage.setItem('jwt',response.jwt);
+        const userRole = localStorage.getItem('userRole');
+        console.log('User role:', userRole);
+        if (this.authService.getUserRole()=='CHEF') {
+          this.router.navigate(['/chef']);
+        } else if (this.authService.getUserRole()==('ETUDIANT')) {
           this.router.navigate(['/etudiant']);
         } else {
-          this.router.navigate(['/gestion-menu']);
+          this.router.navigate(['/admin']);
         }
-        this.s.setRoles(roles);
-        console.log('User roles:', this.s.getRoles());
+        
       },
       error => {
         console.error('Login error:', error);
-       
-        this.router.navigate(['/acceuil']);
+        // Gérer les erreurs de connexion (afficher un message d'erreur, réinitialiser le formulaire, etc.)
       }
     );
   }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SignupService } from '../services/signup.service';
-import { Router } from '@angular/router';
+import { SignupRequest } from '../model/signup-request';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,41 +8,36 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  Nom: string = '';
-  Prenom: string = '';
-  numeroEtudiant: string = '';
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
-  errorMessage: string = '';
-  constructor(private _sig:SignupService,private router: Router,){
+  registerRequest: any = {};
+  password2='';
+  errorMessage: string | undefined;
 
-  }
-  onSubmit(): void {
-    if (this.password !== this.confirmPassword) {
+  constructor(private authService:AuthService) {}
+  signupEtudiant(){
+    if (this.password2 !== this.registerRequest.password) {
       this.errorMessage = 'Passwords do not match';
-      return;
+      console.log(this.errorMessage);
     }
-
-    const EtudiantRegisterDto = {
-      nom: this.Nom,
-      prenom: this.Prenom,
-      numeroEtudiant: this.numeroEtudiant,
-      role:'etudiant',
-      email: this.email,
-      password: this.password
-    };
-
-    this._sig.signupEtudiant(EtudiantRegisterDto).subscribe(
-      response => {
-        console.log('User signed up successfully', response);
-        this.router.navigate(['/login']);
+    else{
+    this.authService.registerStudent(this.registerRequest).subscribe(
+      response=>{
+        console.log('Signup successful for student:',response);
       },
-      error => {
-      
-        console.error('Error signing up user', error);
-        this.errorMessage = 'An error occurred while signing up';
+      error =>{
+        console.error('signup error for student:',error);
       }
-    );
+    )
+    }
+  }
+
+  signupChef(){
+    this.authService.registerChef(this.registerRequest).subscribe(
+      response=>{
+        console.log('Signup successful for Chef:',response);
+      },
+      error =>{
+        console.error('signup error for Chef:',error);
+      }
+    )
   }
 }

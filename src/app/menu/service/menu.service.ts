@@ -2,34 +2,33 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Menu } from '../model/menu';
+import { AuthService } from 'src/app/auth/service/auth.service';
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
-<<<<<<< HEAD
-  baseUrl='http://localhost:9092/api/chef/menus';
-=======
-  baseUrl='http://localhost:9092/menu';
->>>>>>> efe354ae6e74b1c35fd62856ccbade485bc15e87
-  constructor(private http:HttpClient) { }
-
-  getMenu(){
-    return this.http.get(this.baseUrl);
+  baseUrl='http://localhost:9092/api/menus';
+  constructor(private http:HttpClient,private auths:AuthService) { }
+  headers=this.auths.createAuthorizationHeader();
+  
+  getMenuDuJour(){
+    return this.http.get<any>(this.baseUrl,{ headers :this.headers!});
   }
-
-  getMenuById(id: any): Observable<Menu> {
-    return this.http.get<Menu>(`${this.baseUrl}/${id}`);
+  getMenu(): Observable<any[]>{
+  return this.http.get<any[]>(this.baseUrl, { headers :this.headers!});
   }
 
   addMenu(menu:any){
-    return this.http.post(this.baseUrl,menu);
+  return this.http.post<any>(this.baseUrl,menu, { headers :this.headers!});
   }
-
   updateMenu(id: number, menu:any){
-    return this.http.put(`${this.baseUrl}/${id}`, menu);
+  return this.http.put(`${this.baseUrl}/${id}`, menu,{ headers :this.headers!});
   }
 
   deleteMenu(id:any){
-    return this.http.delete(this.baseUrl+"/"+id);
+  return this.http.delete(this.baseUrl+"/"+id,{ headers :this.headers!});
+  }
+  getMenuById(id:number):Observable<any>{
+  return this.http.get<any>(`${this.baseUrl}/${id}`, { headers :this.headers!})
   }
 }

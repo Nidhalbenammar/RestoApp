@@ -44,7 +44,8 @@ import { UserRoutingModule } from './users/user-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    UserRoutingModule
+    UserRoutingModule,
+    
   ],
   providers: [
    

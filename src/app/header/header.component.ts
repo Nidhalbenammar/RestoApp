@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../auth/services/login.service';
+import { AuthService } from '../auth/service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,6 @@ import { LoginService } from '../auth/services/login.service';
 })
 export class HeaderComponent {
 test=true;
-constructor(public s:LoginService){}
-ngOnInit(): void {
-  if (this.s.isLoggedIn()){
-    this.test=true;
-  }
-}
+constructor(private auth:AuthService){}
+role=this.auth.getUserRole();
 }

@@ -45,12 +45,9 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-      <ng-container *ngIf="this.s.isLoggedIn()" >
-        <a (click)="this.s.logout()"  [routerLink]="['/acceuil']" class="book-a-table-btn scrollto d-none d-lg-flex">Log out</a></ng-container>
-        <ng-container *ngIf="!this.s.isLoggedIn()" >
+  
       <a (click)="test = false" [routerLink]="['/login']" class="book-a-table-btn scrollto d-none d-lg-flex">Log In</a>
       <a (click)="test = false" [routerLink]="['/signup']" class="book-a-table-btn scrollto d-none d-lg-flex">Sign Up</a>
       
-    </ng-container>
     </div>
-  </header><!-- End Header -->
+  </header ><!-- End Header -->
