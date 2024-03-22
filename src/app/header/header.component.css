@@ -3,3 +3,9 @@
     width: 60px; 
     height: 60px; 
   }
+ #topbar{
+  position:absolute;
+ }
+ header{
+  position: absolute;
+ }
