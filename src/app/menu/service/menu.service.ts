@@ -6,7 +6,11 @@ import { Menu } from '../model/menu';
   providedIn: 'root'
 })
 export class MenuService {
+<<<<<<< HEAD
   baseUrl='http://localhost:9092/api/chef/menus';
+=======
+  baseUrl='http://localhost:9092/menu';
+>>>>>>> efe354ae6e74b1c35fd62856ccbade485bc15e87
   constructor(private http:HttpClient) { }
 
   getMenu(){

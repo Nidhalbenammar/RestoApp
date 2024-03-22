@@ -33,4 +33,8 @@ export class LoginService {
     localStorage.removeItem('jwt');
     this.roles = {};
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> efe354ae6e74b1c35fd62856ccbade485bc15e87
