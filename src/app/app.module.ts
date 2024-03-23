@@ -17,6 +17,7 @@ import { MenuDetailsComponent } from './menu/menu-details/menu-details.component
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { UserRoutingModule } from './users/user-routing.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -44,6 +45,7 @@ import { UserRoutingModule } from './users/user-routing.module';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    SweetAlert2Module.forRoot(),
     UserRoutingModule,
     
   ],
