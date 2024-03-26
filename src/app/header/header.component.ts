@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth/service/auth.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { AuthService } from '../auth/service/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-test=true;
+
 constructor(public auth:AuthService){}
-role=this.auth.getUserRole();
+
 }

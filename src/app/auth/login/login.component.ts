@@ -31,6 +31,7 @@ export class LoginComponent {
         
       },
       error => {
+        this.showAlertError();
         console.error('Login error:', error);
 
       }
@@ -45,6 +46,14 @@ export class LoginComponent {
     icon: 'success',
     showConfirmButton: false,
     timer: 1500 
-  });
+  });}
+  async showAlertError() {
+    const { value: error } = await Swal.fire({
+      title: 'Wrong Email or Password!',
+      text: '',
+      icon: 'error',
+      showConfirmButton: false,
+      timer: 1500 
+    });
 }
 }

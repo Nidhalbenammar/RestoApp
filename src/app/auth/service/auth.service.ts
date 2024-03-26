@@ -51,8 +51,11 @@ export class AuthService {
   }
   
 
-  getUserRole(): string | null {
-    return localStorage.getItem('userRole');
+  getUserRole(): string | null|boolean {
+    if(this.isLoggedIn()==false){
+      return false;
+    }else{
+    return localStorage.getItem('userRole');}
   }
 
   createAuthorizationHeader(): HttpHeaders {
@@ -72,5 +75,12 @@ export class AuthService {
   logout(): void {
     localStorage.removeItem('jwt');
     this.router.navigate(['/acceuil']);
+  }
+  isLoggedIn(): boolean {
+    const isLoggedIn = !!localStorage.getItem('jwt');
+    if (isLoggedIn) {
+      console.log('User is logged in!');
+    }
+    return isLoggedIn;
   }
 }

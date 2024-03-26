@@ -20,6 +20,8 @@ import { UserRoutingModule } from './users/user-routing.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { RouterModule } from '@angular/router';
 import { ChefComponent } from './users/chef/chef.component';
+import { EtudiantComponent } from './users/etudiant/etudiant.component';
+import { AdminComponent } from './users/admin/admin.component';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { ChefComponent } from './users/chef/chef.component';
     LoginComponent,
     SignupComponent,
     ChefComponent,
-  
+  EtudiantComponent,
+  AdminComponent
   
 
   ],
