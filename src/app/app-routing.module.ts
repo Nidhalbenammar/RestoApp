@@ -6,6 +6,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { MenuRoutingModule } from './menu/menu-routing.module';
 import { UserRoutingModule } from './users/user-routing.module';
+import { GestionMenuComponent } from './menu/gestion-menu/gestion-menu.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/acceuil', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'acceuil',component:AcceuilComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
+  {path:'gestion-menu',component:GestionMenuComponent}
 ];
 
 @NgModule({

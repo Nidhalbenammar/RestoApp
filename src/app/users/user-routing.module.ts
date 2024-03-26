@@ -7,10 +7,12 @@ import { EtudiantComponent } from './etudiant/etudiant.component';
 import { etudiantGuard } from './etudiant/guard/etudiant.guard';
 import { chefGuard } from '../menu/guard/chef.guard';
 
+
 const routes: Routes = [
   {path:"admin",component:AdminComponent},
   {path:"chef",component:ChefComponent,canActivate:[chefGuard]},
-  {path:"etudiant",component:EtudiantComponent,canActivate:[etudiantGuard]}
+  {path:"etudiant",component:EtudiantComponent,canActivate:[etudiantGuard]},
+  
   
 ];
 @NgModule({
