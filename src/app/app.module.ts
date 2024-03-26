@@ -18,8 +18,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { UserRoutingModule } from './users/user-routing.module';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
-
+import { RouterModule } from '@angular/router';
+import { ChefComponent } from './users/chef/chef.component';
 
 
 @NgModule({
@@ -35,7 +35,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     MenuDetailsComponent,
     LoginComponent,
     SignupComponent,
- 
+    ChefComponent,
+  
   
 
   ],
@@ -47,6 +48,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     SweetAlert2Module.forRoot(),
     UserRoutingModule,
+    RouterModule
     
   ],
   providers: [

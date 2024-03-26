@@ -8,6 +8,6 @@ import { AuthService } from '../auth/service/auth.service';
 })
 export class HeaderComponent {
 test=true;
-constructor(private auth:AuthService){}
+constructor(public auth:AuthService){}
 role=this.auth.getUserRole();
 }
