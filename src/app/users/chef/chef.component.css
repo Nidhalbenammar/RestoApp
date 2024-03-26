@@ -20,8 +20,8 @@ body {
 .buttonM,
 .buttonR,
 .buttonA {
-  width: 400px; /* Set a fixed width */
-  height: 400px; /* Set a fixed height */
+  width: 350px; /* Set a fixed width */
+  height: 350px; /* Set a fixed height */
   font-size: 24px;
   text-transform: uppercase;
   cursor: pointer;
