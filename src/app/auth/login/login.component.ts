@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
-
+import { SwalComponent, SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,12 +11,12 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginRequest: any = {};
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router,private readonly swalTargets: SwalPortalTargets) {}
 
   login() {
     this.authService.login(this.loginRequest).subscribe(
       response => {
-       
+       this.showAlert();
         console.log('Login successful:', response);
         localStorage.setItem('jwt',response.jwt);
         const userRole = localStorage.getItem('userRole');
@@ -31,8 +32,19 @@ export class LoginComponent {
       },
       error => {
         console.error('Login error:', error);
-        // Gérer les erreurs de connexion (afficher un message d'erreur, réinitialiser le formulaire, etc.)
+
       }
     );
   }
+ 
+
+  async showAlert() {
+  const { value: success } = await Swal.fire({
+    title: 'Welcome!',
+    text: '',
+    icon: 'success',
+    showConfirmButton: false,
+    timer: 1500 
+  });
+}
 }
