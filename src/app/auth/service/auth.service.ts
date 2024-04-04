@@ -32,12 +32,10 @@ export class AuthService {
   login(loginRequest: any): Observable<any> {
     return this.http.post<any>(this.baseUrl + "login", loginRequest).pipe(
       map(response => {
-        // Vérification de la réponse et extraction du token JWT
+      
         if (response && response.jwt) {
-          // Stockage du token JWT dans le localStorage
           localStorage.setItem('jwt', response.jwt);
-  
-          // Stockage du rôle dans le localStorage
+          localStorage.setItem('userId', response.userId);
           localStorage.setItem('userRole', response.role);
         }
         return response;
@@ -48,14 +46,16 @@ export class AuthService {
   saveTokenAndRole(token: string, roles: string): void {
     localStorage.setItem('token', token);
     localStorage.setItem('userRole', roles);
+
   }
   
 
-  getUserRole(): string | null|boolean {
-    if(this.isLoggedIn()==false){
+  getUserRole(): string | null | boolean {
+    if (!this.isLoggedIn()) {
       return false;
-    }else{
-    return localStorage.getItem('userRole');}
+    } else {
+      return localStorage.getItem('userRole');
+    }
   }
 
   createAuthorizationHeader(): HttpHeaders {
@@ -79,7 +79,7 @@ export class AuthService {
   isLoggedIn(): boolean {
     const isLoggedIn = !!localStorage.getItem('jwt');
     if (isLoggedIn) {
-      console.log('User is logged in!');
+
     }
     return isLoggedIn;
   }

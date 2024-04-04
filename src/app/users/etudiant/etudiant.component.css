@@ -17,7 +17,7 @@ body {
     align-items: center;
 }
 
-.buttonM, .buttonR {
+.buttonM, .buttonP,.buttonB {
     padding: 150px;
     font-size: 24px;
     text-transform: uppercase;
@@ -30,13 +30,22 @@ body {
 }
 
 .buttonM {
+    margin-right: 50px;
+
+
     background-image: url(../../../assets/img/menu.png);
 }
+.buttonB {
+   
+    background-image: url(../../../assets/img/phone.png);
+}
 
-.buttonR {
+.buttonP {
+    margin-right: 50px;
+
     background-image: url(../../../assets/img/payment.png);
 }
 
-.buttonR:hover, .buttonM:hover {
+.buttonP:hover, .buttonM:hover,.buttonB:hover {
     transform: scale(1.5);
 }

@@ -8,14 +8,21 @@
 <body>
 
 <div class="container">
-  <div class="button-wrapper" id="maleButton">
-    <a href="#" class="buttonR">
-    Recharger Carte
+  <div class="button-wrapper" id="card">
+    <a  class="buttonP" (click)="reload()" >
+
+      Reload Card    </a>
+  </div>
+  <div class="button-wrapper" id="menu">
+    <a href="#" class="buttonM">
+     See Menu
     </a>
   </div>
-  <div class="button-wrapper" id="femaleButton">
-    <a href="#" class="buttonM">
-     Voir Menu
+ 
+  <div class="button-wrapper" id="balance">
+    
+    <a  class="buttonB" (click)="checkBalance()">
+      check balance
     </a>
   </div>
 </div>
