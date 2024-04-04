@@ -41,13 +41,13 @@
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="text" id="form3Example3" class="form-control" name="nom" [(ngModel)]="registerRequest.nom"/>
-                <label class="form-label" for="form3Example3">Nom</label>
+                <label class="form-label" for="form3Example3">Last Name</label>
               </div>
 
               <!-- Password input -->
               <div class="form-outline mb-4">
                 <input type="text" id="form3Example4" class="form-control" name="prenom" [(ngModel)]="registerRequest.prenom" />
-                <label class="form-label" for="form3Example4">Prénom</label>
+                <label class="form-label" for="form3Example4">First Name</label>
               </div>
               <div class="form-outline">
                 <input type="email" id="form3Example1" class="form-control" name="email" [(ngModel)]="registerRequest.email"/>
@@ -56,14 +56,28 @@
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
+                    <input type="text" id="form3Example12" class="form-control" name="card" [(ngModel)]="registerRequest.numeroCarte"/>
+                    <label class="form-label" for="form3Example1">Restaurant card </label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="password" id="form3Example2" class="form-control" name="code"  [(ngModel)]="registerRequest.codeSecurite" />
+                    <label class="form-label" for="form3Example2">Security code</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
                     <input type="password" id="form3Example12" class="form-control" name="password" [(ngModel)]="registerRequest.password"/>
-                    <label class="form-label" for="form3Example1">Mot de passe</label>
+                    <label class="form-label" for="form3Example1">Password</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div class="form-outline">
                     <input type="password" id="form3Example2" class="form-control" name="cpassword"  [(ngModel)]="password2" />
-                    <label class="form-label" for="form3Example2">confirmer Mot de passe</label>
+                    <label class="form-label" for="form3Example2">Confirm password</label>
                   </div>
                 </div>
               </div>
