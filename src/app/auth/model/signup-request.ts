@@ -4,4 +4,6 @@ export interface SignupRequest {
     role: string;
     nom : string;
     prenom : string;
+    codeSecurite:number;
+    numeroCarte:string;
 }
