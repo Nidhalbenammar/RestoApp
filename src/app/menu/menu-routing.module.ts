@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:"add-menu",component:AddMenuComponent,canActivate:[chefGuard]},
   {path:"menu-details/:id",component:MenuDetailsComponent,canActivate:[chefGuard]},
   {path:"update-menu/:id",component:UpdateMenuComponent,canActivate:[chefGuard]},
-  {path:"affichage-menu",component:AffichageMenuComponent,}
+  {path:"affichage-menu",component:AffichageMenuComponent,canActivate:[chefGuard]}
 ];
 
 @NgModule({
