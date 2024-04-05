@@ -19,7 +19,7 @@ export class LoginComponent {
        this.showAlert();
         console.log('Login successful:', response);
         localStorage.setItem('jwt',response.jwt);
-        localStorage.setItem('userId', response.etudiantId); 
+        localStorage.setItem('userId', response.userId); 
         const userRole = localStorage.getItem('userRole');
         const userId = localStorage.getItem('userId');
         console.log('User ID:', userId);
