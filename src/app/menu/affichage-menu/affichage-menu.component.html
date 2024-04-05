@@ -1,6 +1,6 @@
 <!-- ======= Menu Section ======= -->
 <section id="menu" class="menu section-bg">
-    <div class="container" data-aos="fade-up">
+    <div class="container" data-aos="fade-up"  *ngIf="menu  else noMenus">
 
       <div class="section-title">
         <br>
@@ -8,7 +8,7 @@
         <br>
         <br><br>
         <h2>Menu</h2>
-        <p>Check Our Tasty Menu</p>
+        <p>Check Today's menu</p>
       </div>
 
       <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -21,64 +21,34 @@
         <div class="col-lg-6 menu-item filter-starters">
           <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Lobster Bisque</a><span></span>
+            <a href="#">Description :</a><span></span>
           </div>
           <div class="menu-ingredients">
-            <p>Description : {{menu.descriptionPlat}}</p>
+            <p>{{menu.descriptionPlat}}</p>
           </div>
         </div>
 
         <div class="col-lg-6 menu-item filter-specialty">
           <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Bread Barrel</a><span></span>
+            <a href="#">Dessert : </a><span></span>
           </div>
           <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
+            {{menu.dessert}}
           </div>
         </div>
 
         <div class="col-lg-6 menu-item filter-starters">
           <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
           <div class="menu-content">
-            <a href="#">Crab Cake</a><span></span>
+            <a href="#">Supplement</a><span></span>
           </div>
           <div class="menu-ingredients">
-            A delicate crab cake served on a toasted roll with lettuce and tartar sauce
+            {{menu.supplement}}
           </div>
         </div>
 
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="assets/img/menu/caesar.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Caesar Selections</a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            Lorem, deren, trataro, filede, nerada
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="assets/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Tuscan Grilled</a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            Grilled chicken with provolone, artichoke hearts, and roasted red pesto
-          </div>
-        </div>
-
-
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="assets/img/menu/greek-salad.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Greek Salad</a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            Fresh spinach, crisp romaine, tomatoes, and Greek olives
-          </div>
-        </div>
+       
 
       
 
@@ -86,3 +56,6 @@
 
     </div>
   </section><!-- End Menu Section -->
+  <ng-template #noMenus> 
+    <p>Aucun menu trouvé.</p>
+  </ng-template>
