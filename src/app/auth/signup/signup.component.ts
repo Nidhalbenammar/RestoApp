@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+  
   registerRequest: any = {};
   password2='';
   errorMessage: string | undefined;
