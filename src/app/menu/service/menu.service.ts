@@ -9,11 +9,12 @@ import { AuthService } from '../../auth/service/auth.service';
 })
 export class MenuService {
   baseUrl='http://localhost:9092/api/menus';
+  private baseURL='http://localhost:9092/menuDujour'
   constructor(private http:HttpClient,private auths:AuthService) { }
   headers=this.auths.createAuthorizationHeader();
   
   getMenuDuJour(){
-    return this.http.get<any>(this.baseUrl,{ headers :this.headers!});
+    return this.http.get<any>(this.baseURL,{ headers :this.headers!});
   }
   getMenu(): Observable<any[]>{
   return this.http.get<any[]>(this.baseUrl, { headers :this.headers!});
