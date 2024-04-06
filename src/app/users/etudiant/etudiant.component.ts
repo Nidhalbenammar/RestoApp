@@ -20,13 +20,13 @@ export class EtudiantComponent {
   }
   paye(etudiantId: number, numeroCarte: string, codeSecurite: number) {
     const paymentData = { etudiantId, numeroCarte, codeSecurite };
-    return this.http.post<any>(this.baseUrl + 'api/paiements', paymentData, {headers:this.headers! }).subscribe(
+    return this.http.post<any>(this.baseUrl + 'api/paiements', paymentData, {headers:this.headers }).subscribe(
       response => {
         console.log('sucess:', response);
       },
       (error: HttpErrorResponse) => {
         console.error('Error: ', error);
-        if(error.statusText=="Paiement effectué avec succès."){
+        if(typeof error.error !== 'string'){
           Swal.fire({
             title: 'sucess',
             text: '',
