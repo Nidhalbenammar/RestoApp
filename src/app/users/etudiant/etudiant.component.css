@@ -23,7 +23,7 @@ body {
     text-transform: uppercase;
     cursor: pointer;
     transition: transform 0.3s;
-    border: 1px solid black;
+    
     background-repeat: no-repeat;
     background-position: center; 
     background-size: contain; 
