@@ -1,4 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { ViewChild, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
@@ -17,18 +18,63 @@ export class EtudiantComponent {
   constructor(private auth:AuthService,private http:HttpClient){
 
   }
-  makePayment(etudiantId: number, numeroCarte: string, codeSecurite: number) {
-    this.auth.makePayment(etudiantId, numeroCarte, codeSecurite).subscribe(
+  paye(etudiantId: number, numeroCarte: string, codeSecurite: number) {
+    const paymentData = { etudiantId, numeroCarte, codeSecurite };
+    return this.http.post<any>(this.baseUrl + 'api/paiements', paymentData, {headers:this.headers! }).subscribe(
       response => {
-        console.log('Payment successful:', response);
+        console.log('sucess:', response);
       },
-      error => {
-        console.error('Error making payment:', error);
+      (error: HttpErrorResponse) => {
+        console.error('Error: ', error);
+        if(error.statusText=="Paiement effectué avec succès."){
+          Swal.fire({
+            title: 'sucess',
+            text: '',
+            icon: 'success',
+            showConfirmButton: true,
+ 
+          });
+        }
+        else{
+        Swal.fire({
+          title: error.error,
+          text: '',
+          icon: 'error',
+          showConfirmButton: false,
+    timer: 15000
+        });}
       }
     );
   }
-
-  reload() {
+  payment() {
+    Swal.fire({
+      title: 'Enter The Card Number',
+      html:
+      '<input id="swal-input1" class="swal2-input" placeholder="Enter The Card Number"  >' +
+      '<input  type="password" id="swal-input2" class="swal2-input" placeholder="Enter The security code" >',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+      showLoaderOnConfirm: true,
+      preConfirm: () => {
+        const cardNumber: HTMLInputElement | null = document.getElementById('swal-input1') as HTMLInputElement;
+        const securityCode: HTMLInputElement | null = document.getElementById('swal-input2') as HTMLInputElement;
+        if (cardNumber && securityCode) {
+          const cardNumber1 = cardNumber.value;
+          const securityCode1 = securityCode.value;
+          console.log('Card Number:', cardNumber1);
+          console.log('Security Code:', securityCode1);
+          return this.paye(Number(this.userId), cardNumber1, Number(securityCode1));
+        } else {
+          return null;
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+  }
+  rech() {
     Swal.fire({
       title: 'Enter The Amount',
       input: 'number',
@@ -39,12 +85,12 @@ export class EtudiantComponent {
       confirmButtonText: 'Submit',
       showLoaderOnConfirm: true,
       preConfirm: (solde) => {
-        return this.reloadCard(solde);
+        return this.recharge(solde);
       },
       allowOutsideClick: () => !Swal.isLoading()
     });
   }
-  reloadCard(solde: number) {
+  recharge(solde: number) {
     
     const requestData = {
       id:this.userId,
@@ -55,33 +101,33 @@ export class EtudiantComponent {
     return this.http.post<any>(this.baseUrl + "rechargerCarte", requestData,{ headers :this.headers!}).subscribe(
       
       response => {
-        console.log('Card reloaded successfully:', requestData.montant);
+        console.log('success:', requestData.montant);
       },
       error => {
-        console.error('Error reloading card:', error);
+        console.error('Error :', error);
       }
     );
   }
 
 
-checkBalance() {
-  return this.http.get<any>(this.baseUrl + this.userId + "/monsolde", { headers: this.headers }).subscribe(
-    response => {
-      console.log('Solde:', response);
-      this.solde=response;
-      this.showBalance();
-    },
-    error => {
-      console.error('Error :', error);
-    }
-  );
-}
-async showBalance() {
-  Swal.fire({ 
-    title:'Your Balance is: '+ this.solde.toString(),
-    text: '',
-    icon: 'info',
-    showConfirmButton: false,
-    timer: 1500
-  });
-}}
+  checkBalance() {
+    return this.http.get<any>(this.baseUrl + this.userId + "/monsolde", { headers: this.headers }).subscribe(
+      response => {
+        console.log('Solde:', response);
+        this.solde=response;
+        this.showBalance();
+      },
+      error => {
+        console.error('Error :', error);
+      }
+    );
+  }
+  async showBalance() {
+    Swal.fire({ 
+      title:'Your Balance is: '+ this.solde.toString(),
+      text: '',
+      icon: 'info',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }}
