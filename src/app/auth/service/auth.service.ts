@@ -83,4 +83,10 @@ export class AuthService {
     }
     return isLoggedIn;
   }
+  makePayment(etudiantId: number, numeroCarte: string, codeSecurite: number) {
+    const paymentData = { etudiantId, numeroCarte, codeSecurite };
+    const headers =this.createAuthorizationHeader();
+
+    return this.http.post<any>(this.baseUrl + 'api/paiements', paymentData, { headers });
+  }
 }

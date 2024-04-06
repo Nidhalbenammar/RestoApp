@@ -22,6 +22,7 @@ export class SignupComponent {
       this.showAlertError();
     }
     else{
+      console.log(this.registerRequest);
     this.authService.registerStudent(this.registerRequest).subscribe(
       response=>{
         console.log('Signup successful for student:',response);

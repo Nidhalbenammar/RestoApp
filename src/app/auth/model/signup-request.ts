@@ -4,7 +4,7 @@ export interface SignupRequest {
     role: string;
     nom : string;
     prenom : string;
-    numeroCarte:any;
     codeSecurite:number;
+    numeroEtudiant:number;
     
 }
