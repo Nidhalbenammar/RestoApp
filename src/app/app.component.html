@@ -71,8 +71,9 @@
          </nav>
          <nav id="navbar" *ngIf="this.auth.getUserRole()=='ETUDIANT'" class="navbar order-last order-lg-0" >
            <ul>
-             <li><a class="nav-link scrollto active" [routerLink]="['/acceuil']">Recharge card</a></li>
+             <li><a class="nav-link scrollto active" [routerLink]="['/etudiant']">Recharge card</a></li>
              <li><a class="nav-link scrollto" [routerLink]="['/affichage-menu']">See menu</a></li>
+             <li><a class="nav-link scrollto" [routerLink]="['/etudiantTra']">Transactions</a></li>
              <li><a class="nav-link scrollto" href="">My account</a></li>
            </ul>
            <i class="bi bi-list mobile-nav-toggle"></i>

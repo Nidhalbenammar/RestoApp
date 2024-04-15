@@ -1,6 +1,7 @@
 import { CanActivateFn , Router} from '@angular/router';
 import { Injectable, inject } from '@angular/core';
-import { AuthService } from 'src/app/auth/service/auth.service';
+import { AuthService } from '../../../auth/service/auth.service';
+
 
 
 export const etudiantGuard: CanActivateFn = (route, state) => {

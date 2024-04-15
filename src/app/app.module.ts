@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
 import { ChefComponent } from './users/chef/chef.component';
 import { EtudiantComponent } from './users/etudiant/etudiant.component';
 import { AdminComponent } from './users/admin/admin.component';
+import { TransactionComponent } from './users/etudiant/transaction/transaction.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { AdminComponent } from './users/admin/admin.component';
     SignupComponent,
     ChefComponent,
   EtudiantComponent,
-  AdminComponent
+  AdminComponent,
+  TransactionComponent
   
 
   ],

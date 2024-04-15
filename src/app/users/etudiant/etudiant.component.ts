@@ -18,62 +18,7 @@ export class EtudiantComponent {
   constructor(private auth:AuthService,private http:HttpClient){
 
   }
-  paye(etudiantId: number, numeroCarte: string, codeSecurite: number) {
-    const paymentData = { etudiantId, numeroCarte, codeSecurite };
-    return this.http.post<any>(this.baseUrl + 'api/paiements', paymentData, {headers:this.headers }).subscribe(
-      response => {
-        console.log('sucess:', response);
-      },
-      (error: HttpErrorResponse) => {
-        console.error('Error: ', error);
-        if(typeof error.error !== 'string'){
-          Swal.fire({
-            title: 'sucess',
-            text: '',
-            icon: 'success',
-            showConfirmButton: true,
  
-          });
-        }
-        else{
-        Swal.fire({
-          title: error.error,
-          text: '',
-          icon: 'error',
-          showConfirmButton: false,
-    timer: 15000
-        });}
-      }
-    );
-  }
-  payment() {
-    Swal.fire({
-      title: 'Enter The Card Number',
-      html:
-      '<input id="swal-input1" class="swal2-input" placeholder="Enter The Card Number"  >' +
-      '<input  type="password" id="swal-input2" class="swal2-input" placeholder="Enter The security code" >',
-      inputAttributes: {
-        autocapitalize: 'off'
-      },
-      showCancelButton: true,
-      confirmButtonText: 'Submit',
-      showLoaderOnConfirm: true,
-      preConfirm: () => {
-        const cardNumber: HTMLInputElement | null = document.getElementById('swal-input1') as HTMLInputElement;
-        const securityCode: HTMLInputElement | null = document.getElementById('swal-input2') as HTMLInputElement;
-        if (cardNumber && securityCode) {
-          const cardNumber1 = cardNumber.value;
-          const securityCode1 = securityCode.value;
-          console.log('Card Number:', cardNumber1);
-          console.log('Security Code:', securityCode1);
-          return this.paye(Number(this.userId), cardNumber1, Number(securityCode1));
-        } else {
-          return null;
-        }
-      },
-      allowOutsideClick: () => !Swal.isLoading()
-    });
-  }
   rech() {
     Swal.fire({
       title: 'Enter The Amount',
