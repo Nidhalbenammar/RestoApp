@@ -1,6 +1,11 @@
-body {
-    
+html {
     background-color: wheat;
-  
-
+    height: 100%;
 }
+
+body {
+    margin: 2em;
+    background-color: wheat;
+}
+
+td:last-child {text-align:center;}

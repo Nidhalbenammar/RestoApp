@@ -25,6 +25,7 @@ import { AdminComponent } from './users/admin/admin.component';
 import { TransactionComponent } from './users/etudiant/transaction/transaction.component';
 import { AddPropositionComponent } from './menu/propositions/add-proposition/add-proposition/add-proposition.component';
 import { ListePropsitionsComponent } from './menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
+import { PropositionsComponent } from './users/etudiant/propositions/propositions.component';
 
 
 
@@ -47,6 +48,7 @@ import { ListePropsitionsComponent } from './menu/propositions/liste-proposition
   TransactionComponent,
   AddPropositionComponent,
   ListePropsitionsComponent,
+  PropositionsComponent,
 
   
 
