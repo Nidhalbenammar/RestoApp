@@ -17,7 +17,7 @@ body {
     align-items: center;
 }
 
-.buttonM, .buttonP,.buttonB {
+.buttonM, .buttonP,.buttonV {
     padding: 150px;
     font-size: 24px;
     text-transform: uppercase;
@@ -32,20 +32,14 @@ body {
 .buttonM {
     margin-right: 50px;
 
-
-    background-image: url(../../../../assets/img/pay.png);
+    background-image: url(../../../../assets/img/assessment.png);
 }
-.buttonB {
-   
-    background-image: url(../../../../assets/img/phone.png);
-}
-
-.buttonP {
+.buttonV {
     margin-right: 50px;
 
-    background-image: url(../../../../assets/img/transfer.png);
+    background-image: url(../../../../assets/img/vote.png);
 }
 
-.buttonP:hover, .buttonM:hover,.buttonB:hover {
+.buttonM:hover,.buttonV:hover {
     transform: scale(1.5);
 }

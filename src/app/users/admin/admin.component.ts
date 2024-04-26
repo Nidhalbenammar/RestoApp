@@ -1,4 +1,4 @@
-import { Component ,OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import Swal from 'sweetalert2';
 

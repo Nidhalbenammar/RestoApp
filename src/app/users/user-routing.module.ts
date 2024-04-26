@@ -10,6 +10,7 @@ import { adminGuard } from './admin/admin.guard';
 import { TransactionComponent } from './etudiant/transaction/transaction.component';
 import { AddPropositionComponent } from '../menu/propositions/add-proposition/add-proposition/add-proposition.component';
 import { ListePropsitionsComponent } from '../menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
+import { PropositionsComponent } from './etudiant/propositions/propositions.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path:"etudiant",component:EtudiantComponent,canActivate:[etudiantGuard]},
   {path:"etudiantTra",component:TransactionComponent,canActivate:[etudiantGuard]},
   {path:"add-propositions",component:AddPropositionComponent,canActivate:[etudiantGuard]},
-  {path:"liste-propositions",component:ListePropsitionsComponent,canActivate:[etudiantGuard]}
+  {path:"liste-propositions",component:ListePropsitionsComponent,canActivate:[etudiantGuard]},
+  {path:"propositions",component:PropositionsComponent,canActivate:[etudiantGuard]}
   
   
 ];
