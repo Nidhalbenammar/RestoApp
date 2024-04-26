@@ -8,6 +8,8 @@ import { etudiantGuard } from './etudiant/guard/etudiant.guard';
 import { chefGuard } from '../menu/guard/chef.guard';
 import { adminGuard } from './admin/admin.guard';
 import { TransactionComponent } from './etudiant/transaction/transaction.component';
+import { AddPropositionComponent } from '../menu/propositions/add-proposition/add-proposition/add-proposition.component';
+import { ListePropsitionsComponent } from '../menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
 
 
 const routes: Routes = [
@@ -15,6 +17,8 @@ const routes: Routes = [
   {path:"chef",component:ChefComponent,canActivate:[chefGuard]},
   {path:"etudiant",component:EtudiantComponent,canActivate:[etudiantGuard]},
   {path:"etudiantTra",component:TransactionComponent,canActivate:[etudiantGuard]},
+  {path:"add-propositions",component:AddPropositionComponent,canActivate:[etudiantGuard]},
+  {path:"liste-propositions",component:ListePropsitionsComponent,canActivate:[etudiantGuard]}
   
   
 ];

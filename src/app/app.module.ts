@@ -23,6 +23,9 @@ import { ChefComponent } from './users/chef/chef.component';
 import { EtudiantComponent } from './users/etudiant/etudiant.component';
 import { AdminComponent } from './users/admin/admin.component';
 import { TransactionComponent } from './users/etudiant/transaction/transaction.component';
+import { AddPropositionComponent } from './menu/propositions/add-proposition/add-proposition/add-proposition.component';
+import { ListePropsitionsComponent } from './menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
+
 
 
 @NgModule({
@@ -41,7 +44,10 @@ import { TransactionComponent } from './users/etudiant/transaction/transaction.c
     ChefComponent,
   EtudiantComponent,
   AdminComponent,
-  TransactionComponent
+  TransactionComponent,
+  AddPropositionComponent,
+  ListePropsitionsComponent,
+
   
 
   ],
