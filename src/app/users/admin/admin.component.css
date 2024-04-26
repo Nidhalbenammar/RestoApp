@@ -73,3 +73,28 @@ body {
 .swal2-icon.swal2-error .swal2-icon-content::after {
   background-image: url('../../../assets/img/anuler.jpg'); /* Remplacez 'error-icon.png' par votre propre image */
 }
+/* Style pour l'icône */
+.icon {
+  /* Ajoutez ici les styles que vous souhaitez appliquer à l'icône */
+  width: 24px; /* largeur de l'image */
+  height: 24px; /* hauteur de l'image */
+  margin-right: 10px; /* marge à droite pour l'espace */
+}
+.places-available {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.places-available h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.places-available img {
+  width: 200px; /* ajustez la taille selon vos besoins */
+  height: auto;
+  border-radius: 50%; /* pour arrondir les coins de l'image */
+}
