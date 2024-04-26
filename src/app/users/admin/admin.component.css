@@ -55,15 +55,12 @@ body {
   text-align: center;
 }
 
-.places-available h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
+
 
 .places-available img {
   width: 200px; /* ajustez la taille selon vos besoins */
   height: auto;
-  border-radius: 50%; /* pour arrondir les coins de l'image */
+   /* pour arrondir les coins de l'image */
 }
 .swal2-icon.swal2-success .swal2-icon-content::after {
   background-image: url('../../../assets/img/valider.avif'); /* Remplacez 'success-icon.png' par votre propre image */
@@ -80,21 +77,4 @@ body {
   height: 24px; /* hauteur de l'image */
   margin-right: 10px; /* marge à droite pour l'espace */
 }
-.places-available {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
 
-.places-available h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.places-available img {
-  width: 200px; /* ajustez la taille selon vos besoins */
-  height: auto;
-  border-radius: 50%; /* pour arrondir les coins de l'image */
-}
