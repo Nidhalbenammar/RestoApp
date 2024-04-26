@@ -1,0 +1,37 @@
+<body>
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3>Add Proposition</h3>
+                <div class="card">
+                    <form class="form-card" onsubmit="event.preventDefault()" [formGroup]="propForm">
+                        <input type="number" formControlName="id" hidden/>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Plat<span class="text-danger"> *</span></label> 
+                                <input type="text" id="fname" name="fname" placeholder="Description of the meal"  formControlName="plat"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Dessert<span class="text-danger"> *</span></label>
+                                 <input type="text" id="lname" name="lname" placeholder="Enter Dessert"  formControlName="dessert"> </div>
+                        </div>
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Supplement<span class="text-danger"> *</span></label> 
+                                <input type="text" id="fname" name="fname" placeholder="Supplement"  formControlName="supplement"> </div>
+    
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row justify-content-end">
+                            <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary" (click)="addProposition()">Validate</button> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

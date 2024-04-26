@@ -1,0 +1,23 @@
+<br><br><br><br><br><br><br><br>
+<body>
+<table>
+    <thead>
+      <tr>
+        <th>Plat</th>
+        <th>Dessert</th>
+        <th>Supplement</th>
+        <th>Nombre de votes</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proposition of propositions">
+        <td>{{ proposition.plat }}</td>
+        <td>{{ proposition.dessert }}</td>
+        <td>{{ proposition.supplement }}</td>
+        <td>{{ proposition.vote }}</td>
+        <td><button (click)="vote(proposition)">Vote</button></td>
+      </tr>
+    </tbody>
+  </table>
+</body>

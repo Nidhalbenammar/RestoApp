@@ -6,13 +6,16 @@ import { MenuDetailsComponent } from './menu-details/menu-details.component';
 import { UpdateMenuComponent } from './update-menu/update-menu.component';
 import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
 import { chefGuard } from './guard/chef.guard';
+import { AddPropositionComponent } from './propositions/add-proposition/add-proposition/add-proposition.component';
+
 
 const routes: Routes = [
   {path:"gestion-menu",component:GestionMenuComponent,canActivate:[chefGuard]},
   {path:"add-menu",component:AddMenuComponent,canActivate:[chefGuard]},
   {path:"menu-details/:id",component:MenuDetailsComponent,canActivate:[chefGuard]},
   {path:"update-menu/:id",component:UpdateMenuComponent,canActivate:[chefGuard]},
-  {path:"affichage-menu",component:AffichageMenuComponent}
+  {path:"affichage-menu",component:AffichageMenuComponent},
+
 ];
 
 @NgModule({

@@ -45,7 +45,12 @@ body {
 
     background-image: url(../../../assets/img/payment.png);
 }
+.buttonM {
+    margin-right: 50px;
 
-.buttonP:hover, .buttonM:hover,.buttonB:hover {
+    background-image: url(../../../assets/img/assessment.png);
+}
+
+.buttonP:hover, .buttonM:hover,.buttonB:hover,.buttonM:hover {
     transform: scale(1.5);
 }
