@@ -1,8 +1,7 @@
 <body>
   
   <br/><br/><br/><br/><br/><br/>
-  
-  
+  <br/><br/>
   
   
   <div style="display: flex;">
@@ -14,7 +13,7 @@
   
         
         <div class="signup-form">
-          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> ajouter étudiant</h2>
+          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> add student</h2>
 
 
           <form #signupForm="ngForm">
@@ -49,7 +48,7 @@
   
             <div class="role-selection">
               
-              <button type="submit" class="btn btn-primary btn-block mb-4"  (click)="signupEtudiant()">ajouter Étudiant</button>
+              <button type="submit" class="btn btn-primary btn-block mb-4"  (click)="signupEtudiant()">add student</button>
               
             </div>
           
@@ -76,7 +75,7 @@
   
   
             <div class="etudiants-section">
-              <h2>Liste des étudiants</h2>
+              <h2>List of students</h2>
               <ul>
                 <li *ngFor="let etudiant of etudiants">
                   <form #etudiantForm="ngForm"  (ngSubmit)="updateEtudiant(etudiant.id, updatedEtudiant)">
@@ -108,10 +107,10 @@
                       <label for="prenom">solde </label>
                       <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedEtudiant.soldeCarte"  placeholder="{{ etudiant.soldeCarte }}" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                    <button type="submit" class="btn btn-primary">update</button>
                   <br/> <br/> 
                   
-                    <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.id)">Supprimer</button>
+                    <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.id)">delete</button>
                   </form>
                 </li>
               </ul>
@@ -149,7 +148,7 @@
   
         
         <div class="signup-form">
-          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> ajouter chef</h2>
+          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> add  chef</h2>
           <form #signupForm="ngForm">
             <div class="form-group">
               <label for="email">Email</label>
@@ -170,7 +169,7 @@
             <div class="role-selection">
             
             
-              <button type="submit" class="btn btn-primary btn-block mb-4" (click)="signupChef()">ajouter Chef</button>
+              <button type="submit" class="btn btn-primary btn-block mb-4" (click)="signupChef()">add  chef</button>
             </div>
             <div class="chefs-section">
               <h2>Liste des chefs</h2>
@@ -193,9 +192,9 @@
                       <label for="password">Mot de passe</label>
                       <input type="password" id="password" name="password" class="form-control" [(ngModel)]="updatedChef.password" placeholder="********" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                    <button type="submit" class="btn btn-primary">update</button>
                 <br/><br/>
-                    <button type="button" class="btn btn-danger" (click)="deleteChef(chef.id)">Supprimer</button>
+                    <button type="button" class="btn btn-danger" (click)="deleteChef(chef.id)">delete</button>
                   </form>
                 </li>
               </ul>
@@ -212,7 +211,7 @@
   
    <div class="places-available">
     <img src="../../../assets/img/restaurant.png" alt="Image de places disponibles">
-    <h1>  le nombre  de place disponible   :  {{nombredeplaces}} </h1>
+    <h1>  The vailable seat count    :  {{nombredeplaces}} </h1>
     
   </div>
     
