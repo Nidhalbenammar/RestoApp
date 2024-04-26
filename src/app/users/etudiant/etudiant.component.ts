@@ -12,12 +12,17 @@ import Swal from 'sweetalert2';
 })
 export class EtudiantComponent { 
   solde:number=0;
+  nombredeplaces: number = 0;
   private baseUrl = "http://localhost:9092/";
    userId = localStorage.getItem('userId');
     headers=this.auth.createAuthorizationHeader();
   constructor(private auth:AuthService,private http:HttpClient){
 
   }
+  ngOnInit() {
+    this.getNombreDePlaces();
+   }
+   
  
   rech() {
     Swal.fire({
@@ -75,4 +80,16 @@ export class EtudiantComponent {
       showConfirmButton: false,
       timer: 1500
     });
-  }}
+  }
+
+  getNombreDePlaces() {
+    this.auth.getnombredeplaces().subscribe(
+      (nombre: number) => {
+        this.nombredeplaces = nombre;
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération du nombre de places:', error);
+      }
+    );
+  }
+}

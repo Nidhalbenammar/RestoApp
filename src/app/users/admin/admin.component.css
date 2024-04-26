@@ -1,42 +1,75 @@
 .form-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #333; /* Arrière-plan sombre */
-    color: #fff; /* Couleur du texte blanc */
-  }
-  
-  .form-container label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-container input[type="text"],
-  .form-container input[type="email"],
-  .form-container input[type="password"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-    background-color: #555; /* Arrière-plan du champ de saisie */
-    color: #fff; /* Couleur du texte blanc */
-  }
-  
-  .form-container button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    background-color:   #FFA833;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .form-container button[type="submit"]:hover {
-    background-color:#FF5E33 ;
-  }
-  
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #333; /* Arrière-plan sombre */
+  color: #fff; /* Couleur du texte blanc */
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  background-color: #555; /* Arrière-plan du champ de saisie */
+  color: #fff; /* Couleur du texte blanc */
+}
+
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color:   #FFA833;
+  color: #fff;
+  cursor: pointer;
+}
+body {
+  color: #fff;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: wheat; 
+
+  background-size: cover;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color:#FF5E33 ;
+}
+.places-available {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.places-available h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.places-available img {
+  width: 200px; /* ajustez la taille selon vos besoins */
+  height: auto;
+  border-radius: 50%; /* pour arrondir les coins de l'image */
+}
+.swal2-icon.swal2-success .swal2-icon-content::after {
+  background-image: url('../../../assets/img/valider.avif'); /* Remplacez 'success-icon.png' par votre propre image */
+}
+
+/* Style pour les alertes d'erreur */
+.swal2-icon.swal2-error .swal2-icon-content::after {
+  background-image: url('../../../assets/img/anuler.jpg'); /* Remplacez 'error-icon.png' par votre propre image */
+}
