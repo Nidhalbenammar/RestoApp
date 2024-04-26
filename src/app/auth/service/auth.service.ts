@@ -9,6 +9,9 @@ import { Observable, map } from 'rxjs';
 export class AuthService {
 
   private baseUrl = "http://localhost:9092/";
+  private baseChefUrl = 'http://localhost:9092/api/chef';
+  private baseEtudiantUrl = 'http://localhost:9092/api/etudiant';
+  private nombreplaces = 'http://localhost:9092/api/restaurant';
 
   constructor(private http: HttpClient, private router:Router) { }
 
@@ -83,5 +86,51 @@ export class AuthService {
     }
     return isLoggedIn;
   }
-  
+   
+  getAllEtudiants(): Observable<any[]> {
+    // Utilisez les en-têtes d'authentification fournis par `AuthService`
+    const headers = this.createAuthorizationHeader();
+    
+    // Faites la requête GET pour récupérer les étudiants
+    return this.http.get<any[]>(this.baseEtudiantUrl, { headers: headers });
+}
+
+getChefs(): Observable<any[]> {
+  const headers = this.createAuthorizationHeader();
+  return this.http.get<any[]>(this.baseChefUrl, { headers: headers });
+}
+
+deleteEtudiant(id: number): Observable<any> {
+  const headers = this.createAuthorizationHeader();
+  const url = `${this.baseEtudiantUrl}/${id}`;
+  return this.http.delete(url, { headers: headers });
+}
+
+deleteChef(id: number): Observable<any> {
+  const headers = this.createAuthorizationHeader();
+  const url = `${this.baseChefUrl}/${id}`;
+  return this.http.delete(url, { headers: headers });
+}
+
+updateEtudiant(id: number, updatedEtudiant: any): Observable<any> {
+  const url = `${this.baseUrl}/api/etudiant/${id}`;
+  return this.http.put(url, updatedEtudiant);
+}
+
+// Fonction pour mettre à jour un chef
+updateChef(id: number, updatedChef: any): Observable<any> {
+  const url = `${this.baseUrl}/api/chef/${id}`;
+  return this.http.put(url, updatedChef);
+}
+
+getToken() {
+  // Retourne le token JWT
+  return 'votre_token_jwt';
+}
+getnombredeplaces(): Observable<number> {
+  const headers = this.createAuthorizationHeader();
+  return this.http.get<number>(this.nombreplaces, { headers: headers });
+}
+ 
+
 }
