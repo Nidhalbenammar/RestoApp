@@ -50,8 +50,13 @@ body {
 
     background-image: url(../../../assets/img/assessment.png);
 }
+.buttonV {
+    margin-right: 50px;
 
-.buttonP:hover, .buttonM:hover,.buttonB:hover,.buttonM:hover {
+    background-image: url(../../../assets/img/vote.png);
+}
+
+.buttonP:hover, .buttonM:hover,.buttonB:hover,.buttonM:hover,.buttonV {
     transform: scale(1.5);
 }
 .places-available {

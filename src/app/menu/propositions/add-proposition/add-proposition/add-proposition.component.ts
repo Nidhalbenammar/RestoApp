@@ -23,6 +23,7 @@ export class AddPropositionComponent {
   addProposition(){
     this.ps.addProposition(this.propForm.value).subscribe((data)=>{
       console.log('Proposition item added successfully');
+      this.router.navigate(['/liste-propositions']);
     });
   }
 }
