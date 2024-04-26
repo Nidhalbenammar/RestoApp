@@ -8,10 +8,15 @@ import { MenuService } from '../service/menu.service';
 export class AffichageMenuComponent implements OnInit {
   menu : any;
   constructor(private ms: MenuService){}
+  vote: number =0;
   ngOnInit(): void {
     this.ms.getMenuDuJour().subscribe((data)=>{
      this.menu=data;
      console.log(data);
+     
     })
   }
+ clicker(){
+  console.log(this.vote);
+ }
 }

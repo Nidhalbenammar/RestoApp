@@ -59,3 +59,21 @@ body {
 .buttonP:hover, .buttonM:hover,.buttonB:hover,.buttonM:hover,.buttonV {
     transform: scale(1.5);
 }
+.places-available {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .places-available h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .places-available img {
+    width: 200px; /* ajustez la taille selon vos besoins */
+    height: auto;
+    border-radius: 50%; /* pour arrondir les coins de l'image */
+  }
