@@ -62,6 +62,7 @@
          </nav><!-- .navbar -->
          <nav id="navbar" *ngIf="this.auth.getUserRole()=='CHEF'" class="navbar order-last order-lg-0" >
            <ul>
+            <li><a class="nav-link scrollto active" [routerLink]="['/chef']">Home</a></li>
              <li><a class="nav-link scrollto active" [routerLink]="['/gestion-menu']">Menu List</a></li>
              <li><a class="nav-link scrollto" [routerLink]="['/add-menu']">Add menu</a></li>
              <li><a class="nav-link scrollto" href="">My account</a></li>
