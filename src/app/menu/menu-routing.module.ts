@@ -7,6 +7,7 @@ import { UpdateMenuComponent } from './update-menu/update-menu.component';
 import { AffichageMenuComponent } from './affichage-menu/affichage-menu.component';
 import { chefGuard } from './guard/chef.guard';
 import { AddPropositionComponent } from './propositions/add-proposition/add-proposition/add-proposition.component';
+import { HistoriqueMenuComponent } from './historique-menu/historique-menu.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:"menu-details/:id",component:MenuDetailsComponent,canActivate:[chefGuard]},
   {path:"update-menu/:id",component:UpdateMenuComponent,canActivate:[chefGuard]},
   {path:"affichage-menu",component:AffichageMenuComponent},
+  {path:"historique-menu",component:HistoriqueMenuComponent,canActivate:[chefGuard]}
 
 ];
 

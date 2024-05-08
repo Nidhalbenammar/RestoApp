@@ -1,85 +1,51 @@
-<!-- ======= Menu Section ======= -->
-<section id="menu" class="menu section-bg">
-    <div class="container" data-aos="fade-up"  *ngIf="menu  else noMenus">
-
-      <div class="section-title">
-        <br>
-        <br>
-        <br>
-        <br><br>
-        <h2>Menu</h2>
-        <p>Check Today's menu</p>
+<body>
+  <br><br><br><br><br>
+<section class="ftco-section" id="section-menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center mb-5 ftco-animate">
+        <h2 class="display-4">Today's Menu</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <p class="lead">Today's menu is not just a list of dishes; it's a journey through flavors, a story waiting to be savored, a symphony of tastes crafted with passion and creativity.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="row" data-aos="fade-up" data-aos-delay="100">
-        <div class="col-lg-12 d-flex justify-content-center">
+      <div class="col-md-12 text-center">
 
+        <div class="tab-content text-left">
+          <div class="tab-pane fade show active" id="pills-breakfast" role="tabpanel" aria-labelledby="pills-breakfast-tab">
+            <div class="row">
+              <div class="col-md-6 ftco-animate">
+                <div class="media menu-item">
+                  <img class="mr-3" src="../../../assets/img/plat-principal.png" class="img-fluid" alt="Free Template by Free-Template.co">
+                  <div class="media-body">
+                    <h5 class="mt-0">Main dish</h5>
+                    <p>{{menu.descriptionPlat}}</p>
+                  </div>
+                </div><br><br><br>
+                <div class="media menu-item" >
+                  <img class="mr-3" src="../../../assets/img/dessert.png" class="img-fluid" alt="Free Template by Free-Template.co">
+                  <div class="media-body">
+                    <h5 class="mt-0">Dessert</h5>
+                    <p>{{menu.dessert}}</p>
+                  </div>
+                </div><br><br><br>
+                <div class="media menu-item">
+                  <img class="mr-3" src="../../../assets/img/des-legumes.png" class="img-fluid" alt="Free Template by Free-Template.co">
+                  <div class="media-body">
+                    <h5 class="mt-0">Supplement</h5>
+                    <p>{{menu.supplement}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>     
+          </div>
         </div>
       </div>
-      <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Description :</a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            <p>{{menu.descriptionPlat}}</p>
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="assets/img/menu/bread-barrel.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Dessert : </a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            {{menu.dessert}}
-          </div>
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/cake.jpg" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Supplement</a><span></span>
-          </div>
-          <div class="menu-ingredients">
-            {{menu.supplement}}
-          </div>
-        </div>
-
-       
-
-      
-
-      </div>
-
     </div>
-    <br><br><br>
-    <div class="rating">
-      <input type="radio" id="star-1" name="star-radio" value="star-1" (click)="this.vote=5">
-      <label for="star-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-      </label>
-      <input type="radio" id="star-2" name="star-radio" value="star-1" (click)="this.vote=4">
-      <label for="star-2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" (click)="this.vote=1"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-      </label>
-      <input type="radio" id="star-3" name="star-radio" value="star-1" (click)="this.vote=3">
-      <label for="star-3">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-      </label>
-      <input type="radio" id="star-4" name="star-radio" value="star-1" (click)="this.vote=2">
-      <label for="star-4">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-      </label>
-      <input type="radio" id="star-5" name="star-radio" value="star-1" (click)="this.vote=1">
-      <label for="star-5">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path pathLength="360" d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
-      </label>
-    </div>
-    <button id="myButton" (click)="clicker()">Click me</button>
-  </section><!-- End Menu Section -->
-  <ng-template #noMenus> 
-    <p>Aucun menu trouvé.</p>
-  </ng-template>
+  </div>
+</section>
+<br><br><br><br><br>
+</body>

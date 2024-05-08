@@ -26,6 +26,7 @@ import { TransactionComponent } from './users/etudiant/transaction/transaction.c
 import { AddPropositionComponent } from './menu/propositions/add-proposition/add-proposition/add-proposition.component';
 import { ListePropsitionsComponent } from './menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
 import { PropositionsComponent } from './users/etudiant/propositions/propositions.component';
+import { HistoriqueMenuComponent } from './menu/historique-menu/historique-menu.component';
 
 
 
@@ -49,6 +50,7 @@ import { PropositionsComponent } from './users/etudiant/propositions/proposition
   AddPropositionComponent,
   ListePropsitionsComponent,
   PropositionsComponent,
+  HistoriqueMenuComponent,
 
   
 

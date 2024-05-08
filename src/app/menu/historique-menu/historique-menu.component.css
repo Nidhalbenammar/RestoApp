@@ -1,0 +1,20 @@
+html {
+    background-color: wheat;
+    height: 100%;
+}
+
+body {
+    margin: 2em;
+    background-color: wheat;
+}
+h3 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+    text-align: center;
+}
+

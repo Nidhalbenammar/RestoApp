@@ -17,20 +17,18 @@ body {
   align-items: center;
 }
 
-.buttonM,
-.buttonR,
-.buttonA {
-  width: 350px; /* Set a fixed width */
-  height: 350px; /* Set a fixed height */
+.buttonM, .buttonR,.buttonA {
+  padding: 150px;
   font-size: 24px;
   text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.3s;
-  border: 1px solid black;
+  
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+  background-position: center; 
+  background-size: contain; 
 }
+
 
 /* Rest of your CSS styles remain unchanged */
 
@@ -42,7 +40,7 @@ body {
   background-image: url(../../../assets/img/ajouter.png);
 }
 .buttonA {
-  background-image: url(../../../assets/img/profile.png);
+  background-image: url(../../../assets/img/history.png);
 }
 .buttonR:hover, .buttonM:hover,.buttonA:hover {
   transform: scale(1.5);
