@@ -6,16 +6,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
-<body>
-    <br><br><br><br><br><br><br>
-    <ol style="--length: 5" role="list" *ngFor="let avs of avis; let i = index  ">
+<body> <br><br><br><br><br><br><br><br><h1>Previous Rates</h1><div *ngFor="let avs of avis;let i=index">    <li><div class="container noselect">
+    <div class="canvas">
+      <div class="tracker tr-1"></div>
+      <div class="tracker tr-2"></div>
+      <div class="tracker tr-3"></div>
+      <div class="tracker tr-4"></div>
+      <div class="tracker tr-5"></div>
+      <div class="tracker tr-6"></div>
+      <div class="tracker tr-7"></div>
+      <div class="tracker tr-8"></div>
+      <div class="tracker tr-9"></div>
+      <div class="tracker tr-10"></div>
+      <div class="tracker tr-11"></div>
+      <div class="tracker tr-12"></div>
+      <div class="tracker tr-13"></div>
+      <div class="tracker tr-14"></div>
+      <div class="tracker tr-15"></div>
+      <div class="tracker tr-16"></div>
+      <div class="tracker tr-17"></div>
+      <div class="tracker tr-18"></div>
+      <div class="tracker tr-19"></div>
+      <div class="tracker tr-20"></div>
+      <div class="tracker tr-21"></div>
+      <div class="tracker tr-22"></div>
+      <div class="tracker tr-23"></div>
+      <div class="tracker tr-24"></div>
+      <div class="tracker tr-25"></div>
+      <div id="card">
+      <p id="prompt">{{ avs.note }} stars</p>
+        <div class="title">{{ avs.commentaire }}</div>
+        <div class="subtitle">
+           hover mouse to See Comment
+        </div>
+        
+      </div>
+    </div>
+  </div></li>
+ 
 
-        <li style="--i: 4">
-            <h3> {{ avs.note }} stars</h3>
-            <h3> {{ menus[i]?.id }}</h3>
-           
-                </li>
-       
-    </ol>
-</body> 
-</html>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>   
+
+    
+ 

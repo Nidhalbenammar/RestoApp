@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../service/menu.service';
 import { AuthService } from 'src/app/auth/service/auth.service';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-affichage-menu',
   templateUrl: './affichage-menu.component.html',
@@ -9,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AffichageMenuComponent implements OnInit {
   menu : any;
+  comment:String | undefined;
   private baseUrl = "http://localhost:9092/ajouterAvis";
     userId = localStorage.getItem('userId');
       headers=this.as.createAuthorizationHeader();
@@ -29,7 +32,7 @@ export class AffichageMenuComponent implements OnInit {
   const AvisRequest = {
     etudiantId:this.userId,
     menuId:this.menu.id,
-	   commentaire:"",
+	   commentaire:this.comment,
 	 note:vote,
     
   };
@@ -45,4 +48,21 @@ export class AffichageMenuComponent implements OnInit {
   );
 }
 
+
+  addComment() {
+    Swal.fire({
+      title: 'Add a Comment',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+      showLoaderOnConfirm: true,
+      preConfirm: (cmnt) => {
+        this.comment=cmnt;
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+  }
 }
