@@ -27,6 +27,7 @@ import { AddPropositionComponent } from './menu/propositions/add-proposition/add
 import { ListePropsitionsComponent } from './menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
 import { PropositionsComponent } from './users/etudiant/propositions/propositions.component';
 import { HistoriqueMenuComponent } from './menu/historique-menu/historique-menu.component';
+import { HistoryComponent } from './users/etudiant/history/history/history.component';
 
 
 
@@ -51,6 +52,7 @@ import { HistoriqueMenuComponent } from './menu/historique-menu/historique-menu.
   ListePropsitionsComponent,
   PropositionsComponent,
   HistoriqueMenuComponent,
+  HistoryComponent,
 
   
 
