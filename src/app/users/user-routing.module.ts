@@ -11,6 +11,7 @@ import { TransactionComponent } from './etudiant/transaction/transaction.compone
 import { AddPropositionComponent } from '../menu/propositions/add-proposition/add-proposition/add-proposition.component';
 import { ListePropsitionsComponent } from '../menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
 import { PropositionsComponent } from './etudiant/propositions/propositions.component';
+import { HistoryComponent } from './etudiant/history/history/history.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,9 @@ const routes: Routes = [
   {path:"etudiantTra",component:TransactionComponent,canActivate:[etudiantGuard]},
   {path:"add-propositions",component:AddPropositionComponent,canActivate:[etudiantGuard]},
   {path:"liste-propositions",component:ListePropsitionsComponent,canActivate:[etudiantGuard]},
-  {path:"propositions",component:PropositionsComponent,canActivate:[etudiantGuard]}
+  {path:"propositions",component:PropositionsComponent,canActivate:[etudiantGuard]},
+  {path:"history",component:HistoryComponent,canActivate:[etudiantGuard]}
+
   
   
 ];

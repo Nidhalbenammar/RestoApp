@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <br><br><br><br><br><br><br>
+    <ol style="--length: 5" role="list" *ngFor="let avs of avis; let i = index  ">
+
+        <li style="--i: 4">
+            <h3> {{ avs.note }} stars</h3>
+            <h3> {{ menus[i]?.id }}</h3>
+           
+                </li>
+       
+    </ol>
+</body> 
+</html>
