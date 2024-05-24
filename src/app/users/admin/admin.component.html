@@ -1,220 +1,77 @@
+
+
+
 <body>
   
-  <br/><br/><br/><br/><br/><br/>
-  <br/><br/>
-  
-  
-  <div style="display: flex;">
-  
-  
-  <form class="form-container" style="flex: 1;" >
-  
-     
-  
-        
-        <div class="signup-form">
-          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> add student</h2>
+
+<br/><br/><br/><br/><br/>
 
 
-          <form #signupForm="ngForm">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" [(ngModel)]="registerRequestetud.email" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Mot de passe</label>
-              <input type="password" id="password" name="password" class="form-control" [(ngModel)]="registerRequestetud.password" required>
-            </div>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="registerRequestetud.nom" required>
-            </div>
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="registerRequestetud.prenom" required>
-            </div>
-            <div class="form-group">
-              <label for="prenom">numero de la carte</label>
-              <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="registerRequestetud.numeroCarte" required>
-            </div>
-            <div class="form-group">
-              <label for="prenom">codeSecurite</label>
-              <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="registerRequestetud.codeSecurite" required>
-            </div>
-            <div class="form-group">
-              <label for="prenom">solde </label>
-              <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="registerRequestetud.soldeCarte" required>
-            </div>
+
+
+<br/><br/><br/><br/><br/>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css "/>
   
-            <div class="role-selection">
-              
-              <button type="submit" class="btn btn-primary btn-block mb-4"  (click)="signupEtudiant()">add student</button>
-              
-            </div>
-          
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-            
-  
-  
-  
-  
-  
-  
-  
-            <div class="etudiants-section">
-              <h2>List of students</h2>
-              <ul>
-                <li *ngFor="let etudiant of etudiants">
-                  <form #etudiantForm="ngForm"  (ngSubmit)="updateEtudiant(etudiant.id, updatedEtudiant)">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" name="email" class="form-control" [(ngModel)]="updatedEtudiant.email" placeholder="{{ etudiant.email }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Mot de passe</label>
-                      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="updatedEtudiant.password" placeholder="********" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="nom">Nom</label>
-                      <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="updatedEtudiant.nom" placeholder="{{ etudiant.nom }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="prenom">Prénom</label>
-                      <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedEtudiant.prenom" placeholder="{{ etudiant.prenom }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="prenom">numero de la carte</label>
-                      <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedEtudiant.numeroCarte"  placeholder="{{ etudiant.numeroCarte }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="prenom">codeSecurite</label>
-                      <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedEtudiant.codeSecurite" placeholder="{{ etudiant.codeSecurite}}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="prenom">solde </label>
-                      <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedEtudiant.soldeCarte"  placeholder="{{ etudiant.soldeCarte }}" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">update</button>
-                  <br/> <br/> 
-                  
-                    <button class="btn btn-danger" (click)="deleteEtudiant(etudiant.id)">delete</button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-            
-          
-            <!-- Afficher tous les chefs -->
-          
-  
-  
-            
-          </form>
-          
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-          
-        </div>
-      
-      </form>
-  
-      <form class="form-container" style="flex: 1;">
-  
-     
-  
-        
-        <div class="signup-form">
-          <h2><img src="../../../assets/img/adduser.png" alt="Icône" class="icon"> add  chef</h2>
-          <form #signupForm="ngForm">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" class="form-control" [(ngModel)]="registerRequestchef.email" required>
-            </div>
-            <div class="form-group">
-              <label for="password">Mot de passe</label>
-              <input type="password" id="password" name="password" class="form-control" [(ngModel)]="registerRequestchef.password" required>
-            </div>
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="registerRequestchef.nom" required>
-            </div>
-            <div class="form-group">
-              <label for="prenom">Prénom</label>
-              <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="registerRequestchef.prenom" required>
-            </div>
-            <div class="role-selection">
-            
-            
-              <button type="submit" class="btn btn-primary btn-block mb-4" (click)="signupChef()">add  chef</button>
-            </div>
-            <div class="chefs-section">
-              <h2>Liste des chefs</h2>
-              <ul>
-                <li *ngFor="let chef of chefs">
-                  <form #chefForm="ngForm" (ngSubmit)="updateChef(chef.id, updatedChef)">
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" id="email" name="email" class="form-control" [(ngModel)]="updatedChef.email" placeholder="{{ chef.email }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="nom">Nom</label>
-                      <input type="text" id="nom" name="nom" class="form-control" [(ngModel)]="updatedChef.nom" placeholder="{{ chef.nom }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="prenom">Prénom</label>
-                      <input type="text" id="prenom" name="prenom" class="form-control" [(ngModel)]="updatedChef.prenom" placeholder="{{ chef.prenom }}" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="password">Mot de passe</label>
-                      <input type="password" id="password" name="password" class="form-control" [(ngModel)]="updatedChef.password" placeholder="********" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary">update</button>
-                <br/><br/>
-                    <button type="button" class="btn btn-danger" (click)="deleteChef(chef.id)">delete</button>
-                  </form>
-                </li>
-              </ul>
-            </div>
-  
-          </form>
-  
-  
-        </div>
-  
-      </form>
-  
-  </div>
-  
-   <div class="places-available">
-    <img src="../../../assets/img/restaurant.png" alt="Image de places disponibles">
-    <h1>  The vailable seat count    :  {{nombredeplaces}} </h1>
+<div class="container">
+  <div class="row">
     
+    
+      <div class="col-md-offset-1 col-md-10">
+      
+          <div class="panel">
+            
+              <div class="panel-heading">
+                  <div class="row">
+                    
+                      <div class="col-sm-12 col-xs-12">
+                          <a [routerLink]="['/add-menu']" class="btn btn-sm btn-primary pull-left"><i class="fa fa-plus-circle"></i> Add New</a>
+                          <form class="form-horizontal pull-right">
+                              <div class="form-group">
+                                  <label>Menus List</label>
+                                 
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+              <div class="panel-body table-responsive">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                           
+                             
+                              <th>Description</th>
+                             
+                           
+                            
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr *ngFor="let m of reclamations ">
+                             
+                              
+                             
+
+                              <td>{{m.contenu}}</td>
+                             
+                        
+
+                      
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+          </div>
+      </div>
   </div>
+</div>
+<br/><br/><br/><br/><br/><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  
+  <div >
+  
     
   
-      
-      

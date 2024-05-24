@@ -12,10 +12,14 @@ import { AddPropositionComponent } from '../menu/propositions/add-proposition/ad
 import { ListePropsitionsComponent } from '../menu/propositions/liste-propositions/liste-propsitions/liste-propsitions.component';
 import { PropositionsComponent } from './etudiant/propositions/propositions.component';
 import { HistoryComponent } from './etudiant/history/history/history.component';
+import { EtudGestComponent } from './admin/etud-gest/etud-gest.component';
+import { ChefGestComponent } from './admin/chef-gest/chef-gest.component';
 
 
 const routes: Routes = [
   {path:"admin",component:AdminComponent,canActivate:[adminGuard]},
+  {path:"etudGest",component:EtudGestComponent,canActivate:[adminGuard]},
+  {path:"chefGest",component:ChefGestComponent,canActivate:[adminGuard]},
   {path:"chef",component:ChefComponent,canActivate:[chefGuard]},
   {path:"etudiant",component:EtudiantComponent,canActivate:[etudiantGuard]},
   {path:"etudiantTra",component:TransactionComponent,canActivate:[etudiantGuard]},

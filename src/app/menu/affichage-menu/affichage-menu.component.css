@@ -36,8 +36,8 @@ body {
   --stroke: #666;
   --fill: #ffc73a;
   position: absolute;
-  left: 700px; 
-  top: 70%;
+  left: 520px; 
+  top: 84%;
 }
 
 .rating input {
@@ -137,7 +137,18 @@ body {
   overflow: hidden;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.062);
 }
-
+.IconContainer2 {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(89, 228, 74);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .3s;
+}
 .IconContainer {
   width: 30px;
   height: 30px;

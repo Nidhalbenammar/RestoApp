@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PropositionsService } from 'src/app/menu/service/propositions.service';
 import { OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-liste-propsitions',
   templateUrl: './liste-propsitions.component.html',
@@ -24,7 +25,7 @@ export class ListePropsitionsComponent implements OnInit{
 
   vote(proposition: any) {
     if (this.votedPropositions.has(proposition.id)) {
-      alert('You have already voted for this proposition.');
+      this.showAlertError();
       return;
     }
 
@@ -49,5 +50,14 @@ export class ListePropsitionsComponent implements OnInit{
 
   sortPropositions() {
     this.propositions.sort((a, b) => b.vote - a.vote);
+  }
+  async showAlertError() {
+    const { value: error } = await Swal.fire({
+      title: 'You have already voted for this proposition !',
+      text: '',
+      icon: 'error',
+      showConfirmButton: false,
+      timer: 1500 
+    });
   }
 }

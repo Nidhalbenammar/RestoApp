@@ -1,6 +1,7 @@
 <body>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css "/><br><br><br><br><br><br><br><br>
 <div class="container">
+    <h3 style="color: black;">Menu Management</h3>
     <div class="row">
         <div class="col-md-offset-1 col-md-10">
             <div class="panel">
@@ -27,7 +28,6 @@
                                 <th>Dessert</th>
                                 <th>Quantity</th>
                                 <th>supplement</th>
-                                <th>View</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,7 +43,6 @@
                                 <td>{{m.dessert}}</td>
                                 <td>{{m.qteDisponible}}</td>
                                 <td>{{m.supplement}}</td>
-                                <td><a class="btn btn-sm btn-success" (click)="viewDetails(m.id)"><i class="fa fa-search"></i></a></td>
                             </tr>
                         </tbody>
                     </table>

@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 export class AffichageMenuComponent implements OnInit {
   menu : any;
   comment:String | undefined;
+  rec:String | undefined;
+
   private baseUrl = "http://localhost:9092/ajouterAvis";
     userId = localStorage.getItem('userId');
       headers=this.as.createAuthorizationHeader();
@@ -61,6 +63,22 @@ export class AffichageMenuComponent implements OnInit {
       showLoaderOnConfirm: true,
       preConfirm: (cmnt) => {
         this.comment=cmnt;
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+  }
+  addRec() {
+    Swal.fire({
+      title: 'Add a Claim',
+      input: 'text',
+      inputAttributes: {
+        autocapitalize: 'off'
+      },
+      showCancelButton: true,
+      confirmButtonText: 'Submit',
+      showLoaderOnConfirm: true,
+      preConfirm: (cmnt) => {
+        this.rec=cmnt;
       },
       allowOutsideClick: () => !Swal.isLoading()
     });

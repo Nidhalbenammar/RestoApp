@@ -131,6 +131,26 @@ getnombredeplaces(): Observable<number> {
   const headers = this.createAuthorizationHeader();
   return this.http.get<number>(this.nombreplaces, { headers: headers });
 }
- 
 
+
+getAllReclamations(): Observable<any[]> {
+  const headers = this.createAuthorizationHeader();
+  return this.http.get<any[]>(`${this.baseUrl}reclamations`, { headers: headers });
+}
+
+makeReclamation(menuId: number, description: string, etudiantId: number): Observable<any> {
+  const reclamationRequest = { menuId, contenu: description };
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token'), 
+      'Etudiant-Id': etudiantId.toString() 
+    })
+  };
+
+  return this.http.post(`${this.baseUrl}reclamation`, reclamationRequest, httpOptions);
+
+
+
+}
 }

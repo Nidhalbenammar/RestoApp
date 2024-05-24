@@ -28,6 +28,8 @@ import { ListePropsitionsComponent } from './menu/propositions/liste-proposition
 import { PropositionsComponent } from './users/etudiant/propositions/propositions.component';
 import { HistoriqueMenuComponent } from './menu/historique-menu/historique-menu.component';
 import { HistoryComponent } from './users/etudiant/history/history/history.component';
+import { EtudGestComponent } from './users/admin/etud-gest/etud-gest.component';
+import { ChefGestComponent } from './users/admin/chef-gest/chef-gest.component';
 
 
 
@@ -53,6 +55,8 @@ import { HistoryComponent } from './users/etudiant/history/history/history.compo
   PropositionsComponent,
   HistoriqueMenuComponent,
   HistoryComponent,
+  EtudGestComponent,
+  ChefGestComponent,
 
   
 

@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MenuService } from '../service/menu.service';
 import { Menu } from '../model/menu';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { SwalComponent, SwalPortalTargets } from '@sweetalert2/ngx-sweetalert2';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-menu',
   templateUrl: './update-menu.component.html',
@@ -17,7 +18,7 @@ export class UpdateMenuComponent implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private ps: MenuService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder) { 
+  constructor(private ps: MenuService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder,private readonly swalTargets: SwalPortalTargets) { 
     this.updateForm = this.fb.group({
       date: [''], 
       description: [''], 
@@ -53,11 +54,19 @@ export class UpdateMenuComponent implements OnInit {
       };
       
       this.ps.updateMenu(this.id, menuData).subscribe(() => {
+        this.showAlert();
         this.router.navigate(['/gestion-menu']);
       }, error => {
         console.error('Error updating menu:', error);
       });
     }
   }
-  
+  async showAlert() {
+    const { value: success } = await Swal.fire({
+      title: 'Updated successfully!',
+      text: '',
+      icon: 'success',
+      showConfirmButton: false,
+      timer: 1500 
+    });} 
 }

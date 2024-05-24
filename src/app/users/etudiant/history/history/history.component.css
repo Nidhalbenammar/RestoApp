@@ -31,7 +31,7 @@ li {
   
   .subtitle {
 	transform: translateY(160px);
-	color: rgb(134, 110, 221);
+	color: rgb(14, 4, 47);
 	text-align: center;
 	width: 100%;
   }
@@ -44,7 +44,7 @@ li {
 	position: absolute;
 	font-size: x-large;
 	font-weight: bold;
-	color: white;
+	color: rgb(4, 4, 4);
   }
   
   .tracker:hover ~ #card .title {
@@ -60,7 +60,7 @@ li {
 	transition: 300ms ease-in-out-out;
 	position: absolute;
 	max-width: 110px;
-	color: rgb(255, 255, 255);
+	color: rgb(11, 6, 62);
   }
   
   .tracker {
@@ -97,7 +97,7 @@ li {
   
   #card::before {
 	content: '';
-	background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+	background: linear-gradient(43deg,rgb(255, 243, 207) 0%, rgb(201, 215, 221) 46%, rgb(99, 122, 159) 100%);
 	filter: blur(2rem);
 	opacity: 30%;
 	width: 100%;

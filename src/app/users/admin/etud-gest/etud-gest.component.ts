@@ -3,13 +3,12 @@ import { AuthService } from 'src/app/auth/service/auth.service';
 import Swal from 'sweetalert2';
 import { FormBuilder } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-etud-gest',
+  templateUrl: './etud-gest.component.html',
+  styleUrls: ['./etud-gest.component.css']
 })
-export class AdminComponent {
+export class EtudGestComponent {
   constructor(private authService: AuthService) {
     
     this.getAllEtudiants;
