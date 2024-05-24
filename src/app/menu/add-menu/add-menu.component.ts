@@ -38,4 +38,13 @@ export class AddMenuComponent {
       showConfirmButton: false,
       timer: 1500 
     });} 
+    async showAlertError() {
+      const { value: error } = await Swal.fire({
+        title: 'You can only add one menu per day !',
+        text: '',
+        icon: 'error',
+        showConfirmButton: false,
+        timer: 1500 
+      });
+  }
 }

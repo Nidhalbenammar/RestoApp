@@ -17,6 +17,7 @@
          </nav><!-- .navbar -->
          <nav id="navbar" *ngIf="this.auth.getUserRole()=='ADMIN'" class="navbar order-last order-lg-0" >
            <ul>
+            <li><a class="nav-link scrollto " [routerLink]="['/admin-index']">Home</a></li>
              <li><a class="nav-link scrollto " [routerLink]="['/admin']">Claim</a></li>
              
              <li><a class="nav-link scrollto" [routerLink]="['/etudGest']">Student</a></li>

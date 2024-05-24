@@ -29,7 +29,7 @@ export class LoginComponent {
         } else if (this.authService.getUserRole()==('ETUDIANT')) {
           this.router.navigate(['/etudiant']);
         } else {
-          this.router.navigate(['/admin']);
+          this.router.navigate(['/admin-index']);
         }
         
       },

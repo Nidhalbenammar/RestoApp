@@ -14,6 +14,7 @@ import { PropositionsComponent } from './etudiant/propositions/propositions.comp
 import { HistoryComponent } from './etudiant/history/history/history.component';
 import { EtudGestComponent } from './admin/etud-gest/etud-gest.component';
 import { ChefGestComponent } from './admin/chef-gest/chef-gest.component';
+import { AdminIndexComponent } from './admin/admin-index/admin-index.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
   {path:"add-propositions",component:AddPropositionComponent,canActivate:[etudiantGuard]},
   {path:"liste-propositions",component:ListePropsitionsComponent,canActivate:[etudiantGuard]},
   {path:"propositions",component:PropositionsComponent,canActivate:[etudiantGuard]},
-  {path:"history",component:HistoryComponent,canActivate:[etudiantGuard]}
+  {path:"history",component:HistoryComponent,canActivate:[etudiantGuard]},
+  {path:"admin-index",component:AdminIndexComponent,canActivate:[adminGuard]},
 
   
   

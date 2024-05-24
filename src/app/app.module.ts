@@ -30,6 +30,7 @@ import { HistoriqueMenuComponent } from './menu/historique-menu/historique-menu.
 import { HistoryComponent } from './users/etudiant/history/history/history.component';
 import { EtudGestComponent } from './users/admin/etud-gest/etud-gest.component';
 import { ChefGestComponent } from './users/admin/chef-gest/chef-gest.component';
+import { AdminIndexComponent } from './users/admin/admin-index/admin-index.component';
 
 
 
@@ -57,6 +58,7 @@ import { ChefGestComponent } from './users/admin/chef-gest/chef-gest.component';
   HistoryComponent,
   EtudGestComponent,
   ChefGestComponent,
+  AdminIndexComponent,
 
   
 

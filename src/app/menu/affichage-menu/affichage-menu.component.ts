@@ -12,12 +12,12 @@ import Swal from 'sweetalert2';
 export class AffichageMenuComponent implements OnInit {
   menu : any;
   comment:String | undefined;
-  rec:String | undefined;
-
   private baseUrl = "http://localhost:9092/ajouterAvis";
     userId = localStorage.getItem('userId');
       headers=this.as.createAuthorizationHeader();
   constructor(private ms: MenuService,protected as:AuthService,private http:HttpClient){}
+  
+  
   
   ngOnInit(): void {
     this.ms.getMenuDuJour().subscribe((data)=>{
@@ -67,20 +67,47 @@ export class AffichageMenuComponent implements OnInit {
       allowOutsideClick: () => !Swal.isLoading()
     });
   }
-  addRec() {
-    Swal.fire({
-      title: 'Add a Claim',
-      input: 'text',
-      inputAttributes: {
-        autocapitalize: 'off'
+  submitComplaint() {
+    this.ms.getMenuDuJour().subscribe(
+      (data) => {
+        this.menu = data;
+       
+        if (!this.menu) {
+          Swal.fire('Erreur', 'Menu non disponible', 'error');
+          return;
+        }
+        Swal.fire({
+          title: 'Faire une réclamation',
+          input: 'textarea',
+          inputAttributes: {
+            autocapitalize: 'off'
+          },
+          showCancelButton: true,
+          confirmButtonText: 'Soumettre',
+          showLoaderOnConfirm: true,
+          preConfirm: (content) => {
+    
+            const complaint = {
+              contenu: content,
+              etudiantId: this.userId,
+              menuId: this.menu.id
+              
+            };
+            
+            return this.as.makeComplaint(complaint).toPromise();
+          },
+          allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+          Swal.fire('Réclamation envoyée!', '', 'success');
+        }).catch((error) => {
+          Swal.fire('Réclamation envoyée!', '', 'success');
+          console.log(error)
+        });
       },
-      showCancelButton: true,
-      confirmButtonText: 'Submit',
-      showLoaderOnConfirm: true,
-      preConfirm: (cmnt) => {
-        this.rec=cmnt;
-      },
-      allowOutsideClick: () => !Swal.isLoading()
-    });
+      (error) => {
+        Swal.fire('Erreur', 'Une erreur est survenue lors de la récupération du menu.', 'error');
+      }
+    );
   }
+  
 }

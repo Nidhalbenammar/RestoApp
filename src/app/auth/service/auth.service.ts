@@ -61,15 +61,13 @@ export class AuthService {
     }
   }
 
-  createAuthorizationHeader(): HttpHeaders {
+  createAuthorizationHeader() {
     const jwtToken = localStorage.getItem('jwt');
+    let headers = new HttpHeaders();
     if (jwtToken) {
-      console.log("JWT token found in local storage", jwtToken);
-      return new HttpHeaders().set("Authorization", "Bearer " + jwtToken);
-    } else {
-      console.log("JWT token not found in local storage");
-      return new HttpHeaders();
+      headers = headers.append('Authorization', `Bearer ${jwtToken}`);
     }
+    return headers;
   }
 
   isAuthenticated(): boolean {
@@ -124,7 +122,7 @@ updateChef(id: number, updatedChef: any): Observable<any> {
 }
 
 getToken() {
-  // Retourne le token JWT
+  
   return 'votre_token_jwt';
 }
 getnombredeplaces(): Observable<number> {
@@ -133,24 +131,17 @@ getnombredeplaces(): Observable<number> {
 }
 
 
+makeComplaint(complaint: any): Observable<any> {
+  const url = `${this.baseUrl}reclamation`;
+  return this.http.post(url, complaint, { headers: this.createAuthorizationHeader() });
+}
+
+ 
+getEtudiantById(id: number) {
+  return this.http.get<any>(`${this.baseUrl}/etudiant/${id}`);
+}
 getAllReclamations(): Observable<any[]> {
   const headers = this.createAuthorizationHeader();
   return this.http.get<any[]>(`${this.baseUrl}reclamations`, { headers: headers });
-}
-
-makeReclamation(menuId: number, description: string, etudiantId: number): Observable<any> {
-  const reclamationRequest = { menuId, contenu: description };
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('token'), 
-      'Etudiant-Id': etudiantId.toString() 
-    })
-  };
-
-  return this.http.post(`${this.baseUrl}reclamation`, reclamationRequest, httpOptions);
-
-
-
 }
 }
